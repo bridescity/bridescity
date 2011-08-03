@@ -10,7 +10,7 @@ development:
   encoding: utf8
   collation: utf8_general_ci
   reconnect: false
-  database: login_development
+  database: bridescity_development
   pool: 5
   username: root
   password: qweqwe
@@ -24,7 +24,7 @@ test:
   encoding: utf8
   collation: utf8_general_ci
   reconnect: false
-  database: login_test
+  database: bridescity_test
   pool: 5
   username: root
   password: qweqwe
@@ -35,7 +35,7 @@ production:
   encoding: utf8
   collation: utf8_general_ci
   reconnect: false
-  database: production
+  database: bridescity_production
   pool: 5
   username: dbuser
   password: qweqwe
