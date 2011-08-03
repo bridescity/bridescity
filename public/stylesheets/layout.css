@@ -1,0 +1,33 @@
+body {
+  font: 13px/1.5em Arial;
+  background: white;
+  color: #222222; }
+
+#toolbar_wrapper {
+  padding: 10px;
+  background: #222222;
+  color: white; }
+  #toolbar_wrapper #toolbar {
+    width: 960px;
+    margin: 0 auto; }
+
+header {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden; }
+  header #logo {
+    float: left; }
+  header #search {
+    float: right; }
+  header nav {
+    clear: both;
+    background: #ede6cf; }
+
+#main {
+  width: 960px;
+  margin: 0 auto;
+  background: #eeeeee; }
+
+footer {
+  width: 960px;
+  margin: 0 auto; }

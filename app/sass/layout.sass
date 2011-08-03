@@ -1,0 +1,30 @@
+@import "style"
+
+@mixin center
+	width: 960px
+	margin: 0 auto
+
+#toolbar_wrapper
+	padding: 10px
+	background: #222
+	color: #fff
+	#toolbar
+		@include center
+
+header
+	@include center
+	overflow: hidden
+	#logo
+		float: left
+	#search
+		float: right
+	nav
+		@include clear
+		background: $dark_beige
+
+#main
+	@include center
+	background: #eee
+
+footer
+	@include center
