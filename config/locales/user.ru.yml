@@ -1,0 +1,20 @@
+ru:
+  user:
+    login: 
+      title: "Вход"
+      link: "Войти"
+      submit: "Войти"
+      forgot_password: "Забыли пароль?"
+    logout:
+      link: "Выйти"
+    not_member: "Еще не стали участником?"
+    registration:
+      title: "Регистрация"
+      link: "Зарегистрироваться"
+      submit: "Зарегистрироваться"
+  formtastic:
+    labels:
+      user:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"

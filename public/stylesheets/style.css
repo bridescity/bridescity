@@ -2,3 +2,76 @@ body {
   font: 13px/1.5em Arial;
   background: white;
   color: #222222; }
+
+/* headers */
+h1 {
+  font: 2em/2em Georgia;
+  margin: 0; }
+
+/* forms */
+form {
+  /*text fields */
+  /*radio & checkbox */
+  /*buttons */ }
+  form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=color], form input[type=number] {
+    width: 250px;
+    height: 1.5em;
+    margin: 0;
+    padding: 5px;
+    background: url(images/inner_shadow.png) no-repeat;
+    border: solid 1px #bbbbbb; }
+    form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=url]:focus, form input[type=color]:focus, form input[type=number]:focus {
+      border: solid 1px #888888; }
+  form input[type=checkbox], form input[type=radio] {
+    padding: 0;
+    margin: 0 5px 0 0; }
+  form input[type=submit], form input[type=button], form input[type=reset], form button {
+    line-height: 1.5em;
+    padding: 5px 10px;
+    text-align: center;
+    background: #eeeeee;
+    border: solid 1px #999999;
+    border-radius: 5px; }
+    form input[type=submit]:hover, form input[type=button]:hover, form input[type=reset]:hover, form button:hover {
+      background: #ede6cf; }
+  form li.input {
+    position: relative;
+    margin: 0 0 10px 0;
+    list-style: none; }
+    form li.input.stringish label {
+      display: block;
+      width: 180px;
+      padding: 6px 0 5px 0;
+      border-bottom: dashed 1px #dddddd; }
+    form li.input.stringish input {
+      position: absolute;
+      left: 180px;
+      top: 0; }
+    form li.input.boolean {
+      margin-left: 180px;
+      padding: 5px 0; }
+    form li.input .inline-errors {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: 0;
+      dislpay: block;
+      position: absolute;
+      overflow: hidden;
+      width: 200px;
+      left: 450px;
+      top: 0;
+      z-index: 100; }
+  form .buttons {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: 0; }
+    form .buttons button {
+      margin: 0 5px 0 0; }
+    form .buttons ol {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: 0;
+      margin: 0 0 0 180px; }

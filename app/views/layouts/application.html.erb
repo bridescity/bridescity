@@ -29,9 +29,12 @@
 <div id="container">
 <%= render "layouts/toolbar" %>
 <%= render "layouts/header" %>
+<%= render "layouts/nav" %>
+<%= render "layouts/messages"%>
 
 <div id="main">
-  	main
+	<div id="content"><%= yield %></div>
+  	<aside>aside<%= yield :aside%></aside>
 </div>
 
 <%= render "layouts/footer" %>

@@ -1,30 +1,81 @@
 @import "style"
 
 @mixin center
-	width: 960px
-	margin: 0 auto
+	width: 940px
+	margin-left: auto
+	margin-right: auto
 
 #toolbar_wrapper
 	padding: 10px
 	background: #222
-	color: #fff
+	color: #aaa
 	#toolbar
 		@include center
+		overflow: hidden
+		a
+			color: #fff
+		.left
+			float: left
+		.right
+			float: right
+
 
 header
 	@include center
+	padding: 10px
 	overflow: hidden
 	#logo
 		float: left
+		width: 256px
+		height: 81px
+		background: url(images/logo.png)
 	#search
 		float: right
-	nav
-		@include clear
-		background: $dark_beige
+nav
+	@include center
+	@include clear
+	overflow: hidden
+	padding: 10px 10px
+	background: $dark_beige
+	a
+		display: block
+		float: left
+		padding: 5px 10px
+		color: #222
+		border-right: solid 1px #aaa
+		text-decoration: none
+		&:hover
+			background: $light_beige
+		&:visited
+			color: #222
+
+#messages
+	@include center
 
 #main
 	@include center
-	background: #eee
+	overflow: hidden
+	position: relative
+	width: 960px
+	margin-top: 10px
+	margin-bottom: 40px
+	overflow: hidden
+
+$aside_width: 300px
+
+#content
+	margin: 0 ($aside_width + 20px) 0 0
+	padding: 0 10px
+
+aside
+	position: absolute
+	right: 0
+	top: 0
+	width: $aside_width
+	padding: 10px
+	background: $dark_beige
 
 footer
 	@include center
+	padding: 10px
+	border-top: solid 1px #222

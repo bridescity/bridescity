@@ -3,31 +3,160 @@ body {
   background: white;
   color: #222222; }
 
+/* headers */
+h1 {
+  font: 2em/2em Georgia;
+  margin: 0; }
+
+/* forms */
+form {
+  /*text fields */
+  /*radio & checkbox */
+  /*buttons */ }
+  form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=color], form input[type=number] {
+    width: 250px;
+    height: 1.5em;
+    margin: 0;
+    padding: 5px;
+    background: url(images/inner_shadow.png) no-repeat;
+    border: solid 1px #bbbbbb; }
+    form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=url]:focus, form input[type=color]:focus, form input[type=number]:focus {
+      border: solid 1px #888888; }
+  form input[type=checkbox], form input[type=radio] {
+    padding: 0;
+    margin: 0 5px 0 0; }
+  form input[type=submit], form input[type=button], form input[type=reset], form button {
+    line-height: 1.5em;
+    padding: 5px 10px;
+    text-align: center;
+    background: #eeeeee;
+    border: solid 1px #999999;
+    border-radius: 5px; }
+    form input[type=submit]:hover, form input[type=button]:hover, form input[type=reset]:hover, form button:hover {
+      background: #ede6cf; }
+  form li.input {
+    position: relative;
+    margin: 0 0 10px 0;
+    list-style: none; }
+    form li.input.stringish label {
+      display: block;
+      width: 180px;
+      padding: 6px 0 5px 0;
+      border-bottom: dashed 1px #dddddd; }
+    form li.input.stringish input {
+      position: absolute;
+      left: 180px;
+      top: 0; }
+    form li.input.boolean {
+      margin-left: 180px;
+      padding: 5px 0; }
+    form li.input .inline-errors {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: 0;
+      dislpay: block;
+      position: absolute;
+      overflow: hidden;
+      width: 200px;
+      left: 450px;
+      top: 0;
+      z-index: 100; }
+  form .buttons {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: 0; }
+    form .buttons button {
+      margin: 0 5px 0 0; }
+    form .buttons ol {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: 0;
+      margin: 0 0 0 180px; }
+
 #toolbar_wrapper {
   padding: 10px;
   background: #222222;
-  color: white; }
+  color: #aaaaaa; }
   #toolbar_wrapper #toolbar {
-    width: 960px;
-    margin: 0 auto; }
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; }
+    #toolbar_wrapper #toolbar a {
+      color: white; }
+    #toolbar_wrapper #toolbar .left {
+      float: left; }
+    #toolbar_wrapper #toolbar .right {
+      float: right; }
 
 header {
-  width: 960px;
-  margin: 0 auto;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
   overflow: hidden; }
   header #logo {
-    float: left; }
+    float: left;
+    width: 256px;
+    height: 81px;
+    background: url(images/logo.png); }
   header #search {
     float: right; }
-  header nav {
-    clear: both;
-    background: #ede6cf; }
+
+nav {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  overflow: hidden;
+  padding: 10px 10px;
+  background: #ede6cf; }
+  nav a {
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    color: #222222;
+    border-right: solid 1px #aaaaaa;
+    text-decoration: none; }
+    nav a:hover {
+      background: #f0ebce; }
+    nav a:visited {
+      color: #222222; }
+
+#messages {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto; }
 
 #main {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
   width: 960px;
-  margin: 0 auto;
-  background: #eeeeee; }
+  margin-top: 10px;
+  margin-bottom: 40px;
+  overflow: hidden; }
+
+#content {
+  margin: 0 320px 0 0;
+  padding: 0 10px; }
+
+aside {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  padding: 10px;
+  background: #ede6cf; }
 
 footer {
-  width: 960px;
-  margin: 0 auto; }
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-top: solid 1px #222222; }

@@ -1,0 +1,7 @@
+%h1=t("user.registration.title")
+=semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |form|
+	=form.input :email
+	=form.input :password
+	=form.input :password_confirmation
+	=form.buttons do
+		=form.submit t("user.registration.submit")

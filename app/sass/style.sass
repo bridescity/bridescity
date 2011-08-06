@@ -1,9 +1,89 @@
+@mixin reset
+	margin: 0
+	padding: 0
+	border: 0
+	background: 0
+
 @mixin clear
 	clear: both
 
 $dark_beige: #ede6cf
+$light_beige: #f0ebce
 
 body
 	font: 13px/1.5em Arial
 	background: #fff
 	color: #222
+
+/* headers */
+h1
+	font: 2em/2em Georgia
+	margin: 0
+
+/* forms */
+$form_label_width: 180px
+$form_line_padding: 5px
+$form_input_width: 250px
+
+form
+	/*text fields*/
+	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number]
+		width: $form_input_width
+		height: 1.5em
+		margin: 0
+		padding: 5px
+		background: url(images/inner_shadow.png) no-repeat
+		border: solid 1px #bbb
+		&:focus
+			border: solid 1px #888
+
+	/*radio & checkbox*/
+	input[type=checkbox], input[type=radio]
+		padding: 0
+		margin: 0 5px 0 0
+
+	/*buttons*/
+	input[type=submit], input[type=button], input[type=reset], button
+		line-height: 1.5em
+		padding: 5px 10px
+		text-align: center
+		background: #eee
+		border: solid 1px #999
+		border-radius: 5px
+		&:hover
+			background: $dark_beige
+
+	li.input
+		position: relative
+		margin: 0 0 10px 0
+		list-style: none
+		&.stringish
+			label
+				display: block
+				width: $form_label_width
+				padding: ($form_line_padding + 1px) 0 ($form_line_padding) 0
+				border-bottom: dashed 1px #ddd
+			input
+				position: absolute
+				left: $form_label_width
+				top: 0
+		&.boolean
+			margin-left: $form_label_width
+			padding: $form_line_padding 0
+		.inline-errors
+			@include reset
+			dislpay: block
+			position: absolute
+			overflow: hidden
+			width: 200px
+			left: $form_label_width + $form_input_width + 20px
+			top: 0
+			z-index: 100
+
+	.buttons
+		@include reset
+		button
+			margin: 0 5px 0 0
+		ol
+			@include reset
+			margin: 0 0 0 $form_label_width

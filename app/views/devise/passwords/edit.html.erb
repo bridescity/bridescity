@@ -1,0 +1,124 @@
+<%= stylesheet_link_tag "main/reset" %>
+<%= stylesheet_link_tag "main/plumb" %>
+<%= stylesheet_link_tag "main/smoothDivScroll" %>
+<%= stylesheet_link_tag "main/shadowbox" %>
+<%= stylesheet_link_tag "main/style" %>
+<%= stylesheet_link_tag "content" %>
+
+<script src="/javascripts/spoiler.js" type="text/javascript" ></script>
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.ui.widget.js" type="text/javascript"></script> 
+<script src="/javascripts/jquery.smoothDivScroll-1.1.js" type="text/javascript"></script>
+<script src="/javascripts/shadowbox.js" type="text/javascript"></script>
+<script src="/javascripts/gallery.js" type="text/javascript"></script> 
+
+<div id="container">
+	<%= render 'headers/header_main' %>
+    <!-- Уменьшаем кегль шрифта вот таким способом если у юзера не сработал @font-face -->
+		<script src="/javascripts/fontunstack.jquery.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        	function title_label_click() {
+        		$('#photo_title').show();
+	          	$('.title-label').hide();
+	          	$('#photo_title').focus();
+	          	$('#photo_title').unbind('blur').blur(function(){
+	          		$('form.edit_photo .submit-me').click();
+	          		$('#photo_title').attr('disabled', 'disabled');
+	          		return false;
+	          	});
+        	}
+            $(document).ready(function() {
+              $(".b-menu").fontunstack( ' "PlumbCondensed-Regular", "Myriad Pro", Arial, Helvetica, sans-serif ' );
+	          $('.title-label, .change-title').click(title_label_click);
+            });
+        </script>
+        <style type="text/css">
+            .b-menu {
+                font-size:12px !important;
+            }
+            .b-menu.set_in_plumbcondensedregular {
+                font-size:16px !important;
+            }
+			.b-menu.set_in_myriadpro {
+                font-size:16px !important;
+            }
+        </style>
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAp1NO_mtCdzK9EGhVN1hvdxQyxfliv54vmNfb2i-IqTeo9WRavBTc7iOL701Do3QA4rsqXKZ2SVMAxQ"
+		        type="text/javascript"></script>
+		<script type="text/javascript">
+
+		    var map;
+			
+			function on_drag() {
+				var point = marker.getPoint();
+				map.panTo(point);
+				document.getElementById("photo_lat").value = point.lat();
+				document.getElementById("photo_lng").value = point.lng();
+				$('form.edit_photo .submit-me').click();
+		    }
+			
+		    function showAddress(address){
+		        if (geocoder) {
+		            geocoder.getLatLng(address, function(point){
+		                map.setCenter(point, 12);
+						map.removeOverlay(marker);
+		                marker = new GMarker(point, {draggable: true});
+		                map.addOverlay(marker);
+		                GEvent.addListener(marker, "dragend", on_drag);
+						document.getElementById("photo_lat").value = point.lat();
+						document.getElementById("photo_lng").value = point.lng();
+						$('form.edit_photo .submit-me').click();
+		            });
+		        }
+		    }
+
+		    
+
+		    $(document).ready(function() {
+		      
+              $(".b-menu").fontunstack( ' "PlumbCondensed-Regular", "Myriad Pro", Arial, Helvetica, sans-serif ' );
+              
+            });
+			
+		</script>
+        <!--[if lte IE 7]><style type="text/css"> .b-menu.set_in_plumbcondensedregular { font-size:10px !important; } </style><![endif]-->
+    <!-- // да, вот такой вот способ если у юзера не сработал @font-face... -->
+	
+	<%= render 'headers/home_menu' %>
+	
+	
+
+		
+    <div class="g-content">
+		<div class="b-gallery-shadow"></div>
+		
+		<div class="b-main-content-full" class="forgot_pasword">
+			<h2>Смена пароля</h2>
+			<br>
+
+			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+			  <%= devise_error_messages! %>
+			  <%= f.hidden_field :reset_password_token %>
+
+			  <p><%= f.label :password, "Новый пароль:" %><br />
+			  <%= f.password_field :password %></p>
+
+				<!--
+			  <p><%#f.label :password_confirmation, "Еще раз:" %><br />
+			  <%# f.password_field :password_confirmation %></p>
+			  -->
+
+			  <p><%= f.submit "Изменить мой пароль" %></p>
+			<% end %>
+			
+
+
+			
+		</div>
+		
+        <div class="clearing"></div>
+    </div>
+	
+    <%= render 'footers/main' %>
+
+</div>

@@ -1,3 +1,11 @@
 #toolbar_wrapper
-	#toolbar="toolbar"
-	
+	#toolbar
+		-if user_signed_in?
+			.right
+				.logout=link_to t("user.logout.link"), destroy_user_session_path, :method => :delete
+		-else
+			.left
+				=t("user.not_member")
+				=link_to t("user.registration.link"), new_user_registration_path
+			.right
+				.logout=link_to t("user.login.link"), new_user_session_path
