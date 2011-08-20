@@ -1,0 +1,2 @@
+module BridesHelper
+end

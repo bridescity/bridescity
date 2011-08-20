@@ -1,0 +1,11 @@
+#profile .sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  padding: 10px; }
+#profile .main {
+  margin: 0 0 0 220px;
+  padding: 0 10px; }
+#profile h1 {
+  font-style: italic; }

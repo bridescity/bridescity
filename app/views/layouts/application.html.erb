@@ -18,6 +18,8 @@
 	<!-- CSS : implied media="all" -->
 	<%= stylesheet_link_tag "normalize" %>
   	<%= stylesheet_link_tag "layout" %>
+  	<%= yield :styles %>
+
 
 	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
 	<%= javascript_include_tag "libs/modernizr-1.6.min" %>

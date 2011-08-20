@@ -2,30 +2,44 @@
 	margin: 0
 	padding: 0
 	border: 0
-	background: 0
 
 @mixin clear
 	clear: both
 
 $dark_beige: #ede6cf
 $light_beige: #f0ebce
+$serif: Arial
+$sans-serif: Georgia
 
 body
-	font: 13px/1.5em Arial
+	font: 13px/1.5em $serif
 	background: #fff
 	color: #222
 
+/* links */
+a
+	&.big_link
+		font: 1.5em/1.5em $sans-serif
 /* headers */
 h1
-	font: 2em/2em Georgia
-	margin: 0
+	font: 2em/2em $sans-serif
+	margin: 0 0 1em 0
+	a.header_small_link
+		float: right
+		display: inline-block
+		font: 0.5em/1em $serif
+		margin: 1.5em 0 0 1em
 
 /* forms */
-$form_label_width: 180px
+$form_label_width: 120px
 $form_line_padding: 5px
-$form_input_width: 250px
+$form_input_width: 300px
 
 form
+	fieldset, fieldset ol
+		@include reset
+	fieldset
+		margin: 0 0 20px 0
 	/*text fields*/
 	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number]
 		width: $form_input_width
@@ -55,21 +69,31 @@ form
 
 	li.input
 		position: relative
-		margin: 0 0 10px 0
+		margin: 0 0 15px 0
 		list-style: none
 		&.stringish
 			label
 				display: block
-				width: $form_label_width
-				padding: ($form_line_padding + 1px) 0 ($form_line_padding) 0
+				width: $form_label_width - 10px
+				padding: ($form_line_padding + 1px) 10px ($form_line_padding) 0
 				border-bottom: dashed 1px #ddd
 			input
 				position: absolute
 				left: $form_label_width
-				top: 0
+				bottom: 0
 		&.boolean
 			margin-left: $form_label_width
 			padding: $form_line_padding 0
+		&.radio
+			fieldset
+				@include reset
+				legend
+					@include reset
+					float: left
+				ol
+					@include reset
+					list-style: none
+					margin-left: $form_label_width
 		.inline-errors
 			@include reset
 			dislpay: block
@@ -82,8 +106,8 @@ form
 
 	.buttons
 		@include reset
-		button
-			margin: 0 5px 0 0
+		input, button
+			margin: 0 10px 0 0
 		ol
 			@include reset
 			margin: 0 0 0 $form_label_width

@@ -1,6 +1,13 @@
 Bridescity::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
+  devise_for :brides, :controllers => {:registrations => "registrations"}
+  devise_for :vendors, :controllers => {:registrations => "registrations"}
+  devise_for :staffs, :controllers => {:registrations => "registrations"}
+
+  resources :users
+  resources :vendors
+  resources :brides
 
   root :to => "main#index"
 

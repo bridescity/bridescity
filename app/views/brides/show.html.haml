@@ -1,0 +1,6 @@
+-content_for :styles do
+	=stylesheet_link_tag "pages/profile"
+%div#profile
+	%div.sidebar
+	%div.main
+		%h1=current_user.profile.full_name

@@ -1,0 +1,16 @@
+ru:
+  bride:
+    registration:
+      title: "Регистрация невесты"
+  formtastic:
+    labels:
+      bride:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение"
+        remember_me: "Запомнить меня"
+        first_name: "Имя"
+        last_name: "Фамилия"
+      bride_profile:
+        first_name: "Имя"
+        last_name: "Фамилия"

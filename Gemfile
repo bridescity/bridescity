@@ -15,5 +15,4 @@ gem 'haml'
 gem 'sass'
 
 gem 'formtastic', '2.0.0.rc3'
-
 gem 'devise'

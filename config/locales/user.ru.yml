@@ -7,14 +7,21 @@ ru:
       forgot_password: "Забыли пароль?"
     logout:
       link: "Выйти"
-    not_member: "Еще не стали участником?"
     registration:
       title: "Регистрация"
       link: "Зарегистрироваться"
+      bride_text: "Бла бла бла, наш сайт поможет вам организовать незабываемую свадьбу"
+      vendor_text: "Вы компания, ищете свеженьких невест?"
+      vendor_link: "Я вендор"
+      bride_link: "Я невеста, я хочу идеальную свадьбу"
       submit: "Зарегистрироваться"
+    toolbar:
+      not_member: "Еще не стали участником?"
+      signed_as: "Вы вошли как "
   formtastic:
     labels:
       user:
         email: "Email"
         password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
+        password_confirmation: "Подтверждение"
+        remember_me: "Запомнить меня"

@@ -1,7 +1,24 @@
-%h1=t("user.registration.title")
-=semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |form|
-	=form.input :email
-	=form.input :password
-	=form.input :password_confirmation
-	=form.buttons do
-		=form.submit t("user.registration.submit")
+-resource.build_profile
+
+-if resource_name == :bride
+	%h1
+		=t("bride.registration.title")
+		=link_to t("vendor.registration.title"), new_vendor_registration_path, :class => "header_small_link"
+-if resource_name == :vendor
+	%h1
+		=t("vendor.registration.title")
+		=link_to t("bride.registration.title"), new_bride_registration_path, :class => "header_small_link"
+
+-semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |user|
+
+	-if resource_name == :bride
+		=user.inputs :first_name, :last_name, :for => :profile
+	-if resource_name == :vendor
+		=user.inputs :name, :for => :profile
+
+	=user.input :email
+	=user.input :password
+	=user.input :password_confirmation
+
+	=user.buttons do
+		=user.submit t("user.registration.submit")

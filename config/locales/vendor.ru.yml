@@ -1,0 +1,15 @@
+ru:
+  vendor:
+    registration:
+      title: "Регистрация компании"
+  formtastic:
+    labels:
+      vendor:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение"
+        remember_me: "Запомнить меня"
+        first_name: "Имя"
+        last_name: "Фамилия"
+      vendor_profile:
+        name: "Название"

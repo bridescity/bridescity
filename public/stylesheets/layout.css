@@ -3,18 +3,33 @@ body {
   background: white;
   color: #222222; }
 
+/* links */
+a.big_link {
+  font: 1.5em/1.5em Georgia; }
+
 /* headers */
 h1 {
   font: 2em/2em Georgia;
-  margin: 0; }
+  margin: 0 0 1em 0; }
+  h1 a.header_small_link {
+    float: right;
+    display: inline-block;
+    font: 0.5em/1em Arial;
+    margin: 1.5em 0 0 1em; }
 
 /* forms */
 form {
   /*text fields */
   /*radio & checkbox */
   /*buttons */ }
+  form fieldset, form fieldset ol {
+    margin: 0;
+    padding: 0;
+    border: 0; }
+  form fieldset {
+    margin: 0 0 20px 0; }
   form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=color], form input[type=number] {
-    width: 250px;
+    width: 300px;
     height: 1.5em;
     margin: 0;
     padding: 5px;
@@ -36,45 +51,57 @@ form {
       background: #ede6cf; }
   form li.input {
     position: relative;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     list-style: none; }
     form li.input.stringish label {
       display: block;
-      width: 180px;
-      padding: 6px 0 5px 0;
+      width: 110px;
+      padding: 6px 10px 5px 0;
       border-bottom: dashed 1px #dddddd; }
     form li.input.stringish input {
       position: absolute;
-      left: 180px;
-      top: 0; }
+      left: 120px;
+      bottom: 0; }
     form li.input.boolean {
-      margin-left: 180px;
+      margin-left: 120px;
       padding: 5px 0; }
+    form li.input.radio fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0; }
+      form li.input.radio fieldset legend {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        float: left; }
+      form li.input.radio fieldset ol {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none;
+        margin-left: 120px; }
     form li.input .inline-errors {
       margin: 0;
       padding: 0;
       border: 0;
-      background: 0;
       dislpay: block;
       position: absolute;
       overflow: hidden;
       width: 200px;
-      left: 450px;
+      left: 440px;
       top: 0;
       z-index: 100; }
   form .buttons {
     margin: 0;
     padding: 0;
-    border: 0;
-    background: 0; }
-    form .buttons button {
-      margin: 0 5px 0 0; }
+    border: 0; }
+    form .buttons input, form .buttons button {
+      margin: 0 10px 0 0; }
     form .buttons ol {
       margin: 0;
       padding: 0;
       border: 0;
-      background: 0;
-      margin: 0 0 0 180px; }
+      margin: 0 0 0 120px; }
 
 #toolbar_wrapper {
   padding: 10px;
@@ -91,6 +118,10 @@ form {
       float: left; }
     #toolbar_wrapper #toolbar .right {
       float: right; }
+    #toolbar_wrapper #toolbar .registration {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: solid 1px #aaaaaa; }
 
 header {
   width: 940px;
@@ -143,14 +174,14 @@ nav {
   overflow: hidden; }
 
 #content {
-  margin: 0 320px 0 0;
+  margin: 0 270px 0 0;
   padding: 0 10px; }
 
 aside {
   position: absolute;
   right: 0;
   top: 0;
-  width: 300px;
+  width: 250px;
   padding: 10px;
   background: #ede6cf; }
 

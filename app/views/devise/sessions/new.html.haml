@@ -1,8 +1,8 @@
 %h1=t("user.login.title")
-=semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
-	=form.input :email
-	=form.input :password
-	=form.input :remember_me, :as => :boolean
-	=form.buttons do
-		=form.submit t("user.login.submit")
-		=link_to t("user.login.forgot_password"), new_user_password_path
+-semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |user|
+	=user.input :email
+	=user.input :password
+	=user.input :remember_me, :as => :boolean
+	=user.buttons do
+		=user.submit t("user.login.submit")
+=render :partial => "devise/shared/links"
