@@ -10,11 +10,12 @@ $dark_beige: #ede6cf
 $light_beige: #f0ebce
 $serif: Arial
 $sans-serif: Georgia
+$dark-grey: #222
 
 body
 	font: 13px/1.5em $serif
 	background: #fff
-	color: #222
+	color: $dark-grey
 
 /* links */
 a
@@ -29,6 +30,10 @@ h1
 		display: inline-block
 		font: 0.5em/1em $serif
 		margin: 1.5em 0 0 1em
+h2
+	a
+		color: $dark-grey
+		font: 1.2em/1em $sans-serif normal
 
 /* forms */
 $form_label_width: 120px
@@ -111,3 +116,14 @@ form
 		ol
 			@include reset
 			margin: 0 0 0 $form_label_width
+.post
+	.info
+		margin: 50px 0
+		text-align: center
+
+		.category, .author
+			font-weight: bold
+
+		h1
+			font: 2em/2em $sans-serif
+			margin-bottom: 5px

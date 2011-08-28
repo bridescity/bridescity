@@ -8,6 +8,7 @@ Bridescity::Application.routes.draw do
   resources :users
   resources :vendors
   resources :brides
+  resources :posts
 
   root :to => "main#index"
 

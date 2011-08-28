@@ -1,0 +1,10 @@
+.post
+	.info
+		.category
+			Идеи и советы
+		%h1
+			=@post.title
+		.author
+			=@post.author.profile.full_name
+	.content
+		=raw @post.content
