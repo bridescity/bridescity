@@ -1,0 +1,7 @@
+%h1=t("bride.edit.profile.title")
+=semantic_form_for @bride do |bride|
+	=bride.semantic_fields_for :profile do |profile|
+		=profile.input :wedding_date, :as => :string
+		=profile.input :about_wedding
+		=profile.input :city, :as => :string, :input_html => {:class => :medium}
+		=profile.input :registry, :as => :string, :input_html => {:class => :medium}

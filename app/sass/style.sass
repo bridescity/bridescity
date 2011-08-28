@@ -33,7 +33,9 @@ h1
 /* forms */
 $form_label_width: 120px
 $form_line_padding: 5px
-$form_input_width: 300px
+$form_input_width: 400px
+$form_input_medium_width: 200px
+$form_input_small_width: 100px
 
 form
 	fieldset, fieldset ol
@@ -41,7 +43,7 @@ form
 	fieldset
 		margin: 0 0 20px 0
 	/*text fields*/
-	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number]
+	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number], textarea
 		width: $form_input_width
 		height: 1.5em
 		margin: 0
@@ -50,6 +52,10 @@ form
 		border: solid 1px #bbb
 		&:focus
 			border: solid 1px #888
+		&.medium
+			width: $form_input_medium_width
+		&.small
+			width: $form_input_small_width
 
 	/*radio & checkbox*/
 	input[type=checkbox], input[type=radio]
@@ -71,16 +77,20 @@ form
 		position: relative
 		margin: 0 0 15px 0
 		list-style: none
-		&.stringish
+		&.stringish, &.text
 			label
-				display: block
+				display: inline-block
 				width: $form_label_width - 10px
-				padding: ($form_line_padding + 1px) 10px ($form_line_padding) 0
+				padding: ($form_line_padding + 1px) 10px $form_line_padding $form_line_padding
 				border-bottom: dashed 1px #ddd
+		&.stringish, &.text,
+			input, textarea
+				display: inline-block
 			input
-				position: absolute
-				left: $form_label_width
 				bottom: 0
+			textarea
+				top: 0
+				height: 100px
 		&.boolean
 			margin-left: $form_label_width
 			padding: $form_line_padding 0

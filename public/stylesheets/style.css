@@ -28,15 +28,19 @@ form {
     border: 0; }
   form fieldset {
     margin: 0 0 20px 0; }
-  form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=color], form input[type=number] {
-    width: 300px;
+  form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=color], form input[type=number], form textarea {
+    width: 400px;
     height: 1.5em;
     margin: 0;
     padding: 5px;
     background: url(images/inner_shadow.png) no-repeat;
     border: solid 1px #bbbbbb; }
-    form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=url]:focus, form input[type=color]:focus, form input[type=number]:focus {
+    form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=url]:focus, form input[type=color]:focus, form input[type=number]:focus, form textarea:focus {
       border: solid 1px #888888; }
+    form input[type=text].medium, form input[type=password].medium, form input[type=email].medium, form input[type=url].medium, form input[type=color].medium, form input[type=number].medium, form textarea.medium {
+      width: 200px; }
+    form input[type=text].small, form input[type=password].small, form input[type=email].small, form input[type=url].small, form input[type=color].small, form input[type=number].small, form textarea.small {
+      width: 100px; }
   form input[type=checkbox], form input[type=radio] {
     padding: 0;
     margin: 0 5px 0 0; }
@@ -53,15 +57,18 @@ form {
     position: relative;
     margin: 0 0 15px 0;
     list-style: none; }
-    form li.input.stringish label {
-      display: block;
+    form li.input.stringish label, form li.input.text label {
+      display: inline-block;
       width: 110px;
-      padding: 6px 10px 5px 0;
+      padding: 6px 10px 5px 5px;
       border-bottom: dashed 1px #dddddd; }
-    form li.input.stringish input {
-      position: absolute;
-      left: 120px;
+    form li.input.stringish input, form li.input.stringish textarea, form li.input.text input, form li.input.text textarea {
+      display: inline-block; }
+    form li.input.stringish input, form li.input.text input {
       bottom: 0; }
+    form li.input.stringish textarea, form li.input.text textarea {
+      top: 0;
+      height: 100px; }
     form li.input.boolean {
       margin-left: 120px;
       padding: 5px 0; }
@@ -88,7 +95,7 @@ form {
       position: absolute;
       overflow: hidden;
       width: 200px;
-      left: 440px;
+      left: 540px;
       top: 0;
       z-index: 100; }
   form .buttons {

@@ -2,6 +2,9 @@ ru:
   bride:
     registration:
       title: "Регистрация невесты"
+    edit:
+      profile:
+        title: "Личная информация"
   formtastic:
     labels:
       bride:

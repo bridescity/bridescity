@@ -38,7 +38,7 @@ module Bridescity
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-		I18n.default_locale = :ru
+	I18n.default_locale = :ru
 
     paths.app.views << "app/views/devise"
   end
