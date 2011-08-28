@@ -6,6 +6,11 @@
 @mixin clear
 	clear: both
 
+@mixin border-radius($radius)
+	-moz-border-radius: $radius
+	border-radius: $radius
+	-webkit-border-radius: $radius
+
 $dark_beige: #ede6cf
 $light_beige: #f0ebce
 $serif: Arial
@@ -30,12 +35,15 @@ h1
 		font: 0.5em/1em $serif
 		margin: 1.5em 0 0 1em
 
+h2
+	margin: 0 0 1em 0
+	font: italic 1.5em/1.5em $sans-serif
+	color: #666
+
 /* forms */
 $form_label_width: 120px
 $form_line_padding: 5px
-$form_input_width: 400px
-$form_input_medium_width: 200px
-$form_input_small_width: 100px
+$form_input_width: 200px
 
 form
 	fieldset, fieldset ol
@@ -43,7 +51,8 @@ form
 	fieldset
 		margin: 0 0 20px 0
 	/*text fields*/
-	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number], textarea
+	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number], textarea, select
+		@include border-radius (2px)
 		width: $form_input_width
 		height: 1.5em
 		margin: 0
@@ -52,10 +61,17 @@ form
 		border: solid 1px #bbb
 		&:focus
 			border: solid 1px #888
-		&.medium
-			width: $form_input_medium_width
 		&.small
-			width: $form_input_small_width
+			width: $form_input_width / 2
+		&.large
+			width: $form_input_width * 2
+	textarea
+		width: $form_input_width * 2
+		height: 180px
+	/* заменить на комбобокс */
+	select
+		height: 2.5em
+		padding: 5px
 
 	/*radio & checkbox*/
 	input[type=checkbox], input[type=radio]
@@ -75,14 +91,13 @@ form
 
 	li.input
 		position: relative
-		margin: 0 0 15px 0
+		margin: 0 0 15px -5px
 		list-style: none
-		&.stringish, &.text
-			label
-				display: inline-block
-				width: $form_label_width - 10px
-				padding: ($form_line_padding + 1px) 10px $form_line_padding $form_line_padding
-				border-bottom: dashed 1px #ddd
+		.label
+			display: inline-block
+			width: $form_label_width - 10px
+			padding: ($form_line_padding + 1px) 10px $form_line_padding $form_line_padding
+			border-bottom: dashed 1px #ccc
 		&.stringish, &.text,
 			input, textarea
 				display: inline-block
@@ -90,7 +105,6 @@ form
 				bottom: 0
 			textarea
 				top: 0
-				height: 100px
 		&.boolean
 			margin-left: $form_label_width
 			padding: $form_line_padding 0
@@ -104,6 +118,19 @@ form
 					@include reset
 					list-style: none
 					margin-left: $form_label_width
+		&.date
+			legend
+				float: left
+			.fragments-group
+				list-style: none
+				float: left
+				.fragment
+					float: left
+					margin-right: 10px
+					label
+						display: none
+					select
+						width: $form_input_width / 2
 		.inline-errors
 			@include reset
 			dislpay: block

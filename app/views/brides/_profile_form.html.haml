@@ -1,7 +1,14 @@
 %h1=t("bride.edit.profile.title")
 =semantic_form_for @bride do |bride|
 	=bride.semantic_fields_for :profile do |profile|
-		=profile.input :wedding_date, :as => :string
+		%h2=t("bride.edit.profile.about_me")
+		=profile.input :first_name
+		=profile.input :last_name
+		=profile.input :city, :as => :string
+
+		%h2=t("bride.edit.profile.my_wedding")
+		=profile.input :wedding_date, :include_blank => false, :start_year => Time.now.year - 70, :end_year => Time.now.year - 7, :prompt => {:day => t("date.label.day") + ":", :month => t("date.label.month") + ":", :year => t("date.label.year") + ":"}
 		=profile.input :about_wedding
-		=profile.input :city, :as => :string, :input_html => {:class => :medium}
-		=profile.input :registry, :as => :string, :input_html => {:class => :medium}
+		=profile.input :registry, :as => :string
+	=bride.buttons do
+		=bride.submit t("bride.edit.profile.submit")

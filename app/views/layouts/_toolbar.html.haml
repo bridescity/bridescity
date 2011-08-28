@@ -5,9 +5,10 @@
 				=t("user.toolbar.signed_as")
 				=link_to current_user.profile.full_name, current_user
 			.right
-				.logout=link_to t("user.logout.link"), destroy_user_session_path, :method => :delete
+				=link_to t("user.edit.link"), edit_current_user_path
+				=link_to t("user.logout.link"), destroy_user_session_path, :method => :delete, :class => "session_action"
 		-else
 			.left
 			.right
-				=link_to t("user.registration.link"), new_bride_registration_path, :class => "registration"
-				=link_to t("user.login.link"), new_user_session_path
+				=link_to t("user.registration.link"), new_bride_registration_path
+				=link_to t("user.login.link"), new_user_session_path, :class => "session_action"

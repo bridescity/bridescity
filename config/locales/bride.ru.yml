@@ -5,6 +5,9 @@ ru:
     edit:
       profile:
         title: "Личная информация"
+        about_me: "Обо мне"
+        my_wedding: "О моей свадьбе"
+        submit: "Сохранить"
   formtastic:
     labels:
       bride:
