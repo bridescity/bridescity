@@ -3,7 +3,7 @@
 		-if user_signed_in?
 			.left
 				=t("user.toolbar.signed_as")
-				=link_to current_user.profile.full_name, current_user
+				=link_to current_user.profile.full_name, "home"
 			.right
 				=link_to t("user.edit.link"), edit_current_user_path
 				=link_to t("user.logout.link"), destroy_user_session_path, :method => :delete, :class => "session_action"

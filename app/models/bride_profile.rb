@@ -6,6 +6,4 @@ class BrideProfile < ActiveRecord::Base
 	def full_name
 		"#{first_name} #{last_name}"
 	end
-
-	attr_accessible :registry
 end
