@@ -15,11 +15,12 @@ $dark_beige: #ede6cf
 $light_beige: #f0ebce
 $serif: Arial
 $sans-serif: Georgia
+$dark-grey: #222
 
 body
 	font: 13px/1.5em $serif
 	background: #fff
-	color: #222
+	color: $dark-grey
 
 /* links */
 a
@@ -39,6 +40,13 @@ h2
 	margin: 0 0 0.5em 0
 	font: italic 1.5em/1.5em $sans-serif
 	color: #666
+/* basic */
+.left
+	float: left
+.right
+	float: right
+.clear
+	clear: both
 
 /* forms */
 $form_label_width: 120px
@@ -68,7 +76,7 @@ form
 	textarea
 		width: $form_input_width * 2
 		height: 180px
-	/* Р·Р°РјРµРЅРёС‚СЊ РЅР° РєРѕРјР±РѕР±РѕРєСЃ */
+	/* заменить на комбобокс */
 	select
 		height: 2.5em
 		padding: 5px
@@ -161,3 +169,21 @@ dl.values
 
 div.block
 	padding-bottom: 1em
+/* post */
+.post
+	.info
+		margin: 50px 0
+		text-align: center
+
+		.category, .author
+			font-weight: bold
+
+		h1
+			font: 2em/2em $sans-serif
+			margin-bottom: 5px
+/* comments */
+.comments
+	.new
+/* TODO: %h2.header or .header ? */
+	%h2.header
+		text-align: center

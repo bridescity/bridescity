@@ -11,7 +11,10 @@ Bridescity::Application.routes.draw do
   resources :users
   resources :vendors
   resources :brides
+
   resources :bride_profiles
+
+  resources :posts
 
   resources :cities
   resources :registries
