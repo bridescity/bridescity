@@ -35,6 +35,14 @@ h2
 		color: $dark-grey
 		font: 1.2em/1em $sans-serif normal
 
+/* basic */
+.left
+	float: left
+.right
+	float: right
+.clear
+	clear: both
+
 /* forms */
 $form_label_width: 120px
 $form_line_padding: 5px
@@ -116,6 +124,7 @@ form
 		ol
 			@include reset
 			margin: 0 0 0 $form_label_width
+/* post */
 .post
 	.info
 		margin: 50px 0
@@ -127,3 +136,9 @@ form
 		h1
 			font: 2em/2em $sans-serif
 			margin-bottom: 5px
+/* comments */
+.comments
+	.new
+/* TODO: %h2.header or .header ? */
+	%h2.header
+		text-align: center

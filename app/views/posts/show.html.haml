@@ -6,5 +6,26 @@
 			=@post.title
 		.author
 			=@post.author.profile.full_name
+		.counters
+			.left
+				=@post.created_at # TODO: use i18n from date.ru.yml
+			.right
+				=@post.likes.count
+				=@post.favorites.count
 	.content
 		=raw @post.content
+	.bottom
+		.left
+			tags
+		.right
+			%a add_to_favorite
+			%a i_like_it
+	.clear
+	.comments
+		.new
+			%text= t("comment.form.header")
+			%buttom= t("comment.form.button")
+		%h2.header
+			=t("comment.header")
+		-#-@post.comments.each do |comment|
+		-#	=comment.content
