@@ -15,6 +15,9 @@ ru:
       vendor_link: "Я вендор"
       bride_link: "Я невеста, я хочу идеальную свадьбу"
       submit: "Зарегистрироваться"
+    edit:
+      profile:
+        link: "Изменить данные"
     toolbar:
       not_member: "Еще не стали участником?"
       signed_as: "Вы вошли как "

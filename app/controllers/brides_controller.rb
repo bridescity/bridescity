@@ -1,3 +1,2 @@
 class BridesController < ApplicationController
-	
 end

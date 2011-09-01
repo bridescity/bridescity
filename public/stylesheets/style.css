@@ -11,7 +11,7 @@ a.big_link {
 /* headers */
 h1 {
   font: 2em/2em Georgia;
-  margin: 0 0 1em 0; }
+  margin: 0 0 0.5em 0; }
   h1 a.header_small_link {
     float: right;
     display: inline-block;
@@ -19,7 +19,7 @@ h1 {
     margin: 1.5em 0 0 1em; }
 
 h2 {
-  margin: 0 0 1em 0;
+  margin: 0 0 0.5em 0;
   font: italic 1.5em/1.5em Georgia;
   color: #666666; }
 
@@ -76,6 +76,7 @@ form {
     form li.input .label {
       display: inline-block;
       width: 110px;
+      margin: 0 10px 0 0;
       padding: 6px 10px 5px 5px;
       border-bottom: dashed 1px #cccccc; }
     form li.input.stringish input, form li.input.stringish textarea, form li.input.text input, form li.input.text textarea {
@@ -135,4 +136,14 @@ form {
       margin: 0;
       padding: 0;
       border: 0;
-      margin: 0 0 0 120px; }
+      margin: 0 0 0 130px; }
+
+dl.values dt {
+  float: left;
+  width: 120px;
+  color: #666666; }
+dl.values dd {
+  margin: 0 0 0.5em 130px; }
+
+div.block {
+  padding-bottom: 1em; }

@@ -1,6 +1,16 @@
 -content_for :styles do
-	=stylesheet_link_tag "pages/profile"
+    =stylesheet_link_tag "pages/profile"
 %div#profile
-	%div.sidebar
-	%div.main
-		%h1=current_user.profile.full_name
+    %div.sidebar
+    %div.main
+        %h1
+            =@user.profile.full_name
+            =link_to t("user.edit.profile.link"), edit_profile_path, :class => "header_small_link"
+        .block
+            =values_for @user.profile do |fields|
+                =fields.value :wedding_date
+                =fields.value :city_name
+                =fields.value :registry_name
+        .block
+            =curly_header BrideProfile.human_attribute_name(:about_wedding)
+            %div=@user.profile.about_wedding

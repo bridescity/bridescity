@@ -20,3 +20,12 @@ ru:
       bride_profile:
         first_name: "Имя"
         last_name: "Фамилия"
+  activerecord:
+    models:
+      bride: "Невеста"
+    attributes:
+      bride_profile:
+        wedding_date: "Дата свадьбы"
+        about_wedding: "О моей свадьбе"
+        city_name: "Город"
+        registry_name: "Загс"

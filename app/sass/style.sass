@@ -28,7 +28,7 @@ a
 /* headers */
 h1
 	font: 2em/2em $sans-serif
-	margin: 0 0 1em 0
+	margin: 0 0 0.5em 0
 	a.header_small_link
 		float: right
 		display: inline-block
@@ -36,7 +36,7 @@ h1
 		margin: 1.5em 0 0 1em
 
 h2
-	margin: 0 0 1em 0
+	margin: 0 0 0.5em 0
 	font: italic 1.5em/1.5em $sans-serif
 	color: #666
 
@@ -96,6 +96,7 @@ form
 		.label
 			display: inline-block
 			width: $form_label_width - 10px
+			margin: 0 10px 0 0
 			padding: ($form_line_padding + 1px) 10px $form_line_padding $form_line_padding
 			border-bottom: dashed 1px #ccc
 		&.stringish, &.text,
@@ -147,4 +148,16 @@ form
 			margin: 0 10px 0 0
 		ol
 			@include reset
-			margin: 0 0 0 $form_label_width
+			margin: 0 0 0 $form_label_width + 10px
+
+dl.values
+	overflow:hidden
+	dt
+		float: left
+		width: $form_label_width
+		color: #666
+	dd
+		margin: 0 0 0.5em ($form_label_width+10px)
+
+div.block
+	padding-bottom: 1em

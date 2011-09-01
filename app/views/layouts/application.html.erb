@@ -17,14 +17,17 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	<!-- CSS : implied media="all" -->
 	<%= stylesheet_link_tag "normalize" %>
+	<%= stylesheet_link_tag "jquery-ui" %>
   	<%= stylesheet_link_tag "layout" %>
   	<%= yield :styles %>
 
 
 	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
 	<%= javascript_include_tag "libs/modernizr-1.6.min" %>
-	<%= javascript_include_tag "jquery" %>
+	<%= javascript_include_tag "jquery.min" %>
+	<%= javascript_include_tag "jquery_plugins/jquery-ui.min" %>
 	<%= javascript_include_tag "jquery_ujs" %>
+	<%= javascript_include_tag "mf" %>
 </head>
 
 <body>

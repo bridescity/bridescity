@@ -6,4 +6,12 @@ class BrideProfile < ActiveRecord::Base
 	def full_name
 		"#{first_name} #{last_name}"
 	end
+
+    def city_name
+        city.name
+    end
+
+    def registry_name
+        registry.name
+    end
 end

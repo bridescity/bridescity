@@ -1,7 +1,7 @@
 Bridescity::Application.routes.draw do
 
-  match "home" => "users#show"
-  match "edit" => "users#edit"
+  match "home" => "users#show", :as => :home
+  match "edit" => "users#edit", :as => :edit_profile
 
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
   devise_for :brides, :controllers => {:registrations => "registrations"}
@@ -12,6 +12,9 @@ Bridescity::Application.routes.draw do
   resources :vendors
   resources :brides
   resources :bride_profiles
+
+  resources :cities
+  resources :registries
 
   root :to => "main#index"
 
