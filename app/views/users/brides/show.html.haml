@@ -2,6 +2,7 @@
     =stylesheet_link_tag "pages/profile"
 %div#profile
     %div.sidebar
+        =image_tag @user.profile.image.url:large
     %div.main
         %h1
             =@user.profile.full_name

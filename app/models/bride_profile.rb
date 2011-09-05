@@ -3,15 +3,21 @@ class BrideProfile < ActiveRecord::Base
 	belongs_to :city
 	belongs_to :registry
 
+	has_attached_file :image, :styles => {
+		:large => "200x", 
+		:medium => "100x100#",
+		:small => "50x50#"
+	}
+
 	def full_name
 		"#{first_name} #{last_name}"
 	end
 
     def city_name
-        city.name
+        city ? city.name : ""
     end
 
     def registry_name
-        registry.name
+        registry ? registry.name : ""
     end
 end

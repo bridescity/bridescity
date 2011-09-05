@@ -1,9 +1,10 @@
 %h1=t("bride.edit.profile.title")
-=semantic_form_for @user.profile do |profile|
+=semantic_form_for @user.profile, :html => { :multipart => true } do |profile|
 	%h2=t("bride.edit.profile.about_me")
 	=profile.input :first_name
 	=profile.input :last_name
 	=profile.input :city, :as => :autocomplete, :on => :name, :source => cities_path
+	=profile.input :image
 
 	%h2=t("bride.edit.profile.my_wedding")
 	=profile.input :wedding_date, :include_blank => false, :start_year => Time.now.year - 70, :end_year => Time.now.year - 7, :prompt => {:day => t("date.label.day") + ":", :month => t("date.label.month") + ":", :year => t("date.label.year") + ":"}

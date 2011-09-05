@@ -15,10 +15,10 @@ $dark_beige: #ede6cf
 $light_beige: #f0ebce
 $serif: Arial
 $sans-serif: Georgia
-$dark-grey: #222
+$dark_grey: #222
 
 body
-	font: 13px/1.5em $serif
+	font: 13px/2em $serif
 	background: #fff
 	color: $dark-grey
 
@@ -159,22 +159,53 @@ form
 			margin: 0 0 0 $form_label_width + 10px
 
 dl.values
+	clear: both
 	overflow:hidden
 	dt
 		float: left
 		width: $form_label_width
 		color: #666
 	dd
-		margin: 0 0 0.5em ($form_label_width+10px)
+		margin: 0 0 0 ($form_label_width+10px)
 
 div.block
 	padding-bottom: 1em
+
+.curly_header
+	text-align: center
+	vertical-align: bottom
+	height: 30px
+	overflow: hidden
+	color: $dark_grey
+	.wrapper
+		position: relative
+	.curl_left
+		position: absolute
+		left: -200px
+		top: -4px
+		display: inline-block
+		height: 32px
+		width: 200px
+		background: url("images/block-separator-lcurl.png") no-repeat scroll right
+	.curl_right
+		position: absolute
+		right: -200px
+		top: -3px
+		display: inline-block
+		height: 32px
+		width: 200px
+		background: url("images/block-separator-rcurl.png") no-repeat left
+	.curl_middle
+		display: inline-block
+		background: #fff
+		padding: 0 10px
+		position: relative
+
 /* post */
 .post
 	.info
 		margin: 50px 0
 		text-align: center
-
 		.category, .author
 			font-weight: bold
 

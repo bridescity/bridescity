@@ -1,6 +1,5 @@
-@charset "UTF-8";
 body {
-  font: 13px/1.5em Arial;
+  font: 13px/2em Arial;
   background: white;
   color: #222222; }
 
@@ -23,10 +22,19 @@ h2 {
   font: italic 1.5em/1.5em Georgia;
   color: #666666; }
 
+/* basic */
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clear {
+  clear: both; }
+
 /* forms */
 form {
   /*text fields */
-  /* заменить на комбобокс */
   /*radio & checkbox */
   /*buttons */ }
   form fieldset, form fieldset ol {
@@ -138,15 +146,61 @@ form {
       border: 0;
       margin: 0 0 0 130px; }
 
-dl.values dt {
-  float: left;
-  width: 120px;
-  color: #666666; }
-dl.values dd {
-  margin: 0 0 0.5em 130px; }
+dl.values {
+  clear: both; }
+  dl.values dt {
+    float: left;
+    width: 120px;
+    color: #666666; }
+  dl.values dd {
+    margin: 0 0 0 130px; }
 
 div.block {
   padding-bottom: 1em; }
+
+.curly_header {
+  text-align: center;
+  vertical-align: bottom;
+  height: 30px;
+  overflow: hidden;
+  color: #222222; }
+  .curly_header .wrapper {
+    position: relative; }
+  .curly_header .curl_left {
+    position: absolute;
+    left: -200px;
+    top: -4px;
+    display: inline-block;
+    height: 32px;
+    width: 200px;
+    background: url("images/block-separator-lcurl.png") no-repeat scroll right; }
+  .curly_header .curl_right {
+    position: absolute;
+    right: -200px;
+    top: -3px;
+    display: inline-block;
+    height: 32px;
+    width: 200px;
+    background: url("images/block-separator-rcurl.png") no-repeat left; }
+  .curly_header .curl_middle {
+    display: inline-block;
+    background: white;
+    padding: 0 10px;
+    position: relative; }
+
+/* post */
+.post .info {
+  margin: 50px 0;
+  text-align: center; }
+  .post .info .category, .post .info .author {
+    font-weight: bold; }
+  .post .info h1 {
+    font: 2em/2em Georgia;
+    margin-bottom: 5px; }
+
+/* comments */
+.comments h2.header {
+  text-align: center; }
 
 #toolbar_wrapper {
   padding: 10px;

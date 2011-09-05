@@ -13,7 +13,7 @@ module ApplicationHelper
     def block(title = nil, options = {}, &content)
       options[:class] = "" if options[:class] == nil
       options[:class]  << " block"
-      header = "<h4>#{title}</h4>" if title != nil
+      header = (content_tag :h4, title) if title != nil
       content_tag :div, "#{header}\n#{capture(&content)} #{clear}".html_safe, options
     end
 
@@ -24,12 +24,14 @@ module ApplicationHelper
         end
 
         def value(method)
-          output = ""
-          output << content_tag(:dt, @record.class.human_attribute_name(method))
-          output << content_tag(:dd, @record.method(method).call)
+          val = @record.method(method).call
+          if val && val != ""
+            output = ""
+            output << content_tag(:dt, @record.class.human_attribute_name(method))
+            output << content_tag(:dd, @record.method(method).call)
           
-          output.html_safe
-           #content << content_tag :dt, record.method("attribute").call
+            output.html_safe
+          end
         end
     end
 
@@ -41,7 +43,12 @@ module ApplicationHelper
         content_tag :dl, capture(&new_block), :class => 'values'
     end
 
-    def curly_header title
-        content_tag :h2, title
+    def curly_header(title = "Curly header", options = {})
+      options[:class] = "" if options[:class] == nil
+      options[:class]  << " curly_header"
+      data = "<span class='wrapper'><span class='curl_left'></span>"<< content_tag(:span, title, :class => "curl_middle") << "<span class='curl_right'></span></span>"
+      content_tag :h2, data.html_safe, options
     end
+
+
 end
