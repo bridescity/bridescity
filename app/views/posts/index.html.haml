@@ -1,5 +1,3 @@
 %h1
 	=t("post.index.header")
--@posts.each do |post|
-	%h2
-		=link_to post.title, post
+=render "posts/stream"

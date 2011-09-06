@@ -1,1 +1,9 @@
-=post.title
+.post-thumb
+  %a{:href => "#{url_for post}"}
+    =image_tag post.image.url(:large)
+  =link_to post.author.profile.full_name, user_path(post.author), :class => "author"
+  .likes-small=post.likes.count
+  %h4
+    =link_to post.title, post
+  .description
+    =post.content.truncate(200)

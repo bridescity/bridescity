@@ -15,6 +15,8 @@ class PostsController < ApplicationController
     @post.author = current_user
     unless @post.save
       render :action => :new
+    else
+      redirect_to @post
     end
   end
 
@@ -34,7 +36,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post
-      @post.update_attributes(params[:post])
+      if @post.update_attributes(params[:post])
+        redirect_to @post
+      else
+        render :action => :edit
+      end
     end
   end
 
