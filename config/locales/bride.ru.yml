@@ -11,13 +11,8 @@ ru:
   formtastic:
     labels:
       bride:
-        email: "Email"
-        password: "Пароль"
         password_confirmation: "Подтверждение"
         remember_me: "Запомнить меня"
-        first_name: "Имя"
-        last_name: "Фамилия"
-      bride_profile:
         first_name: "Имя"
         last_name: "Фамилия"
   activerecord:
@@ -28,4 +23,12 @@ ru:
         wedding_date: "Дата свадьбы"
         about_wedding: "О моей свадьбе"
         city_name: "Город"
+        first_name: "Имя"
+        last_name: "Фамилия"
         registry_name: "Загс"
+        city: "Город"
+        registry: "Загс"
+        image: "Фото"
+      bride:
+        email: "Email"
+        password: "Пароль"

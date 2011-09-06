@@ -1,24 +1,28 @@
-%h1=t("bride.edit.profile.title")
-=semantic_form_for @user.profile, :html => { :multipart => true } do |profile|
-	%h2=t("bride.edit.profile.about_me")
-	=profile.input :first_name
-	=profile.input :last_name
-	=profile.input :city, :as => :autocomplete, :on => :name, :source => cities_path
-	=profile.input :image
+-content_for :styles do
+  =stylesheet_link_tag "pages/profile"
+%div#profile_edit
+  %h1=t("bride.edit.profile.title")
+  =semantic_form_for @user.profile, :html => { :multipart => true } do |profile|
+    %h2=t("bride.edit.profile.about_me")
+    =profile.input :first_name
+    =profile.input :last_name
+    =profile.input :city, :as => :autocomplete, :on => :name, :source => cities_path
+    =profile.input :image
+    =image_tag((@user.profile.image.url:large), :class => "profile_image")
 
-	%h2=t("bride.edit.profile.my_wedding")
-	=profile.input :wedding_date, :include_blank => false, :start_year => Time.now.year - 70, :end_year => Time.now.year - 7, :prompt => {:day => t("date.label.day") + ":", :month => t("date.label.month") + ":", :year => t("date.label.year") + ":"}
-	=profile.input :about_wedding
-	=profile.input :registry, :as => :autocomplete, :on => :name, :source => registries_path
+    %h2=t("bride.edit.profile.my_wedding")
+    =profile.input :wedding_date, :include_blank => false, :start_year => Time.now.year - 70, :end_year => Time.now.year - 7, :prompt => {:day => t("date.label.day") + ":", :month => t("date.label.month") + ":", :year => t("date.label.year") + ":"}
+    =profile.input :about_wedding
+    =profile.input :registry, :as => :autocomplete, :on => :name, :source => registries_path
 
-	=profile.buttons do
-		=profile.submit t("bride.edit.profile.submit")
-	
+    =profile.buttons do
+      =profile.submit t("bride.edit.profile.submit")
+  
 :javascript
 $(function() {
-	$("#bride_profile_registry_id").focus(function() {
-		var city = $("#bride_profile_city_id").data("item.customcomplete"),
-			city_id = city ? city.id : null;$("#bride_profile_registry_id").data("params.customcomplete", {city_id: city_id});
-	});
+  $("#bride_profile_registry_id").focus(function() {
+    var city = $("#bride_profile_city_id").data("item.customcomplete"),
+      city_id = city ? city.id : null;$("#bride_profile_registry_id").data("params.customcomplete", {city_id: city_id});
+  });
 
 });

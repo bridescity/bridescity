@@ -6,7 +6,8 @@
     %div.main
         %h1
             =@user.profile.full_name
-            =link_to t("user.edit.profile.link"), edit_profile_path, :class => "header_small_link"
+            -if @user == current_user
+                =link_to t("user.edit.profile.link"), edit_profile_path, :class => "header_small_link"
         .block
             =values_for @user.profile do |fields|
                 =fields.value :wedding_date

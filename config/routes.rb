@@ -1,5 +1,6 @@
 Bridescity::Application.routes.draw do
-
+  
+  
   match "home" => "users#show", :as => :home
   match "edit" => "users#edit", :as => :edit_profile
 
@@ -19,7 +20,8 @@ Bridescity::Application.routes.draw do
   resources :cities
   resources :registries
 
-  root :to => "main#index"
+  match "brides/:id" => "users#show", :as => :bride
+  root :to => "application#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

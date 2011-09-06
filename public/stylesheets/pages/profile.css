@@ -9,3 +9,6 @@
   padding: 0 10px; }
 #profile h1 {
   font-style: italic; }
+
+#profile_edit .profile_image {
+  margin-left: 135px; }
