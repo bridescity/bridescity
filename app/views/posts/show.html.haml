@@ -12,6 +12,9 @@
 			.right
 				=@post.likes.count
 				=@post.favorites.count
+	-if @post.image.file?
+		.image
+			=image_tag @post.image.url(:giant)
 	.content
 		=raw @post.content
 	.bottom
@@ -22,10 +25,9 @@
 			%a i_like_it
 	.clear
 	.comments
-		.new
-			%text= t("comment.form.header")
-			%buttom= t("comment.form.button")
+		=render "comments/form"
 		%h2.header
-			=t("comment.header")
+			=t("comment.header", :n => 4)
+		=nested_comments(@comments)
 		-#-@post.comments.each do |comment|
 		-#	=comment.content

@@ -1,6 +1,6 @@
 ru:
   comment:
-    form:
+    new:
       header: "Оставить комментарий"
       button: "Опубликовать"
     header: "Комментарии ({{n}})"

@@ -1,4 +1,7 @@
 class MainController < ApplicationController
-  def index   
+
+  def index
+    @posts = Post.find(:all)
   end
+
 end

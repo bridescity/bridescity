@@ -1,0 +1,10 @@
+=semantic_form_for @post, :html => { :multipart => true } do |form|
+  =form.input :title
+  =form.input :content
+  =form.input :draft
+  -if @post.image.file?
+    =image_tag @post.image.url(:large)
+  =form.input :image
+
+  =form.buttons do
+    =form.submit t("post.new.submit")

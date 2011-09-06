@@ -15,13 +15,16 @@ Bridescity::Application.routes.draw do
 
   resources :bride_profiles
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   resources :cities
   resources :registries
 
   match "brides/:id" => "users#show", :as => :bride
   root :to => "application#index"
+  resources :comments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
