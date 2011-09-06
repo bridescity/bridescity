@@ -14,10 +14,14 @@ Bridescity::Application.routes.draw do
 
   resources :bride_profiles
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   resources :cities
   resources :registries
+
+  resources :comments
 
   root :to => "main#index"
 
