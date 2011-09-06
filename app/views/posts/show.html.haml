@@ -1,14 +1,11 @@
 .post
 	.info
-		.category
-			Идеи и советы
-		%h1
-			=@post.title
-		.author
-			=@post.author.profile.full_name
+		=curly_header "Идеи и советы", :class => "category"
+		=link_to @post.author.profile.full_name, user_path(@post.author), :class => "author"
+		%h1=@post.title
 		.counters
 			.left
-				=@post.created_at # TODO: use i18n from date.ru.yml
+				.date=@post.created_at # TODO: use i18n from date.ru.yml
 			.right
 				=@post.likes.count
 				=@post.favorites.count

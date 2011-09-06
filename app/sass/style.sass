@@ -16,9 +16,10 @@ $light_beige: #f0ebce
 $serif: Arial
 $sans-serif: Georgia
 $dark_grey: #222
+$light-grey: #888
 
 body
-	font: 13px/2em $serif
+	font: 13px/2em $sans-serif
 	background: #fff
 	color: $dark-grey
 
@@ -174,26 +175,25 @@ div.block
 .curly_header
 	text-align: center
 	vertical-align: bottom
-	height: 30px
 	overflow: hidden
 	color: $dark_grey
 	.wrapper
 		position: relative
 	.curl_left
 		position: absolute
-		left: -200px
+		left: -300px
 		top: -4px
 		display: inline-block
 		height: 32px
-		width: 200px
+		width: 300px
 		background: url("images/block-separator-lcurl.png") no-repeat scroll right
 	.curl_right
 		position: absolute
-		right: -200px
+		right: -300px
 		top: -3px
 		display: inline-block
 		height: 32px
-		width: 200px
+		width: 300px
 		background: url("images/block-separator-rcurl.png") no-repeat left
 	.curl_middle
 		display: inline-block
@@ -204,14 +204,24 @@ div.block
 /* post */
 .post
 	.info
-		margin: 50px 0
+		margin: 2em 0 5em 0
 		text-align: center
-		.category, .author
-			font-weight: bold
-
-		h1
+		.category
 			font: 2em/2em $sans-serif
-			margin-bottom: 5px
+			margin: 0 0 0 0
+		h1
+			margin: 0 4em 1em 4em
+			font: 2em/1.2em $sans-serif
+		.author
+			color: $light-grey
+			font: italic 1em/2em $sans-serif
+		.counters
+			margin: 0 0 2em 0
+			overflow: hidden
+			border-bottom: solid #666 1px
+			.date
+				font: italic 1em/2em $sans-serif
+				color: $light-grey
 
 .post-thumb
 	h4
@@ -235,13 +245,13 @@ div.block
 	h2.header
 		text-align: center
 	.comment
-		margin-bottom: 20px
+		margin-bottom: 1em
 		.comment-info
 			clear: both
 		.actions
 			clear:both
 	.small-avatar
-		border: 2px solid $dark-grey
+		border: 2px solid #666
 		margin: 0 10px 0 0
 		height: 50px
 		width: 50px

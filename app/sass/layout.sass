@@ -79,9 +79,34 @@ aside
 	top: 0
 	width: $aside_width
 	padding: 10px
-	background: $dark_beige
+	background: #FCFAF5
 
 footer
 	@include center
 	padding: 10px
 	border-top: solid 1px #222
+
+
+.talking-head
+	position: relative
+	img
+		float: left
+		width: 100px
+	.cloud
+		background: #f1ebc9
+		display: table-cell
+		padding: 10px
+		margin-top: 0px
+		height: 130px
+		text-align: center
+		vertical-align: middle
+		width: 140px
+		font: 12px/1.5em $sans-serif
+	.arrow
+		position: absolute
+		background: url(images/talking-head-arrow.png)
+		height: 13px
+		left: 80px
+		position:absolute
+		top: 85px
+		width: 23px
