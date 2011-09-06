@@ -1,6 +1,5 @@
 Bridescity::Application.routes.draw do
   
-  
   match "home" => "users#show", :as => :home
   match "edit" => "users#edit", :as => :edit_profile
 

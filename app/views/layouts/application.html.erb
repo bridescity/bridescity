@@ -39,7 +39,17 @@
 
 <div id="main">
 	<div id="content"><%= yield %></div>
-  	<aside>aside<%= yield :aside%></aside>
+  	<aside>
+  		<div class="talking-head">
+			<img src="/stylesheets/images/talkinghead.jpg" alt="" />
+			<div class="arrow"></div>
+			<div class="cloud">
+				Иногда при вёрстке возникает потребность в вертикальном выравнивании текста в блоке. Обычно этот вопрос решается использованием таблицы.
+			</div>
+		</div>
+  		<%# yield :aside%>
+
+  	</aside>
 </div>
 
 <%= render "layouts/footer" %>
