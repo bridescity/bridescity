@@ -5,7 +5,8 @@
       .small-avatar.left
         =image_tag comment.user.profile.image(:small)
       .author.left
-        =link_to comment.user.profile.full_name, user_path(comment.user), :class => "author"
+      =link_to comment.user.profile.full_name, user_path(comment.user), :class => "author"
+      %br
       .created-at.right
         =comment.created_at.strftime("%e.%m.%Y %T")
 

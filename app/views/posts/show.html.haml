@@ -7,8 +7,9 @@
 			.left
 				.date=@post.created_at # TODO: use i18n from date.ru.yml
 			.right
-				=@post.likes.count
-				=@post.favorites.count
+				.likes-small
+					=@post.likes.count
+				=#@post.favorites.count
 	-if @post.image.file?
 		.image
 			=image_tag @post.image.url(:giant)
@@ -24,7 +25,7 @@
 	.comments
 		=render "comments/form"
 		%h2.header
-			=t("comment.header", :n => 4)
+			=t("comment.header", :n => @post.comments.count)
 		=nested_comments(@comments)
 		-#-@post.comments.each do |comment|
 		-#	=comment.content

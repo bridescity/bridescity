@@ -5,3 +5,7 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 *.sublime-project
+public/system
+public/stylesheets/layout.css
+public/stylesheets/style.css
+bridescity.sublime-workspace

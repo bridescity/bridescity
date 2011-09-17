@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825190920) do
+ActiveRecord::Schema.define(:version => 20110905235728) do
 
   create_table "bride_profiles", :force => true do |t|
     t.string   "first_name"
@@ -22,10 +22,56 @@ ActiveRecord::Schema.define(:version => 20110825190920) do
     t.text     "about_wedding"
     t.integer  "city_id"
     t.integer  "registry_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "cities", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.text     "content"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "favorable_id"
+    t.string   "favorable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "likes", :force => true do |t|
+    t.integer  "likeable_id"
+    t.string   "likeable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materials", :force => true do |t|
+    t.string   "type"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "author_id"
+    t.boolean  "draft"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "registries", :force => true do |t|
