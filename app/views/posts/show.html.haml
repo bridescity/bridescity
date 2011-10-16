@@ -1,31 +1,34 @@
 .post
-	.info
-		=curly_header "Идеи и советы", :class => "category"
-		=link_to @post.author.profile.full_name, user_path(@post.author), :class => "author"
-		%h1=@post.title
-		.counters
-			.left
-				.date=@post.created_at # TODO: use i18n from date.ru.yml
-			.right
-				.likes-small
-					=@post.likes.count
-				=#@post.favorites.count
-	-if @post.image.file?
-		.image
-			=image_tag @post.image.url(:giant)
-	.content
-		=raw @post.content
-	.bottom
-		.left
-			tags
-		.right
-			%a add_to_favorite
-			%a i_like_it
-	.clear
-	.comments
-		=render "comments/form"
-		%h2.header
-			=t("comment.header", :n => @post.comments.count)
-		=nested_comments(@comments)
-		-#-@post.comments.each do |comment|
-		-#	=comment.content
+  .info
+    =curly_header "Идеи и советы", :class => "category"
+    =link_to @post.author.profile.full_name, user_path(@post.author), :class => "author"
+    %h1=@post.title
+    .counters
+      .left
+        .date=@post.created_at # TODO: use i18n from date.ru.yml
+      .right
+        .likes-small
+          =@post.likes.count
+        =#@post.favorites.count
+  -if @post.image.file?
+    .image
+      =image_tag @post.image.url(:giant)
+  .content
+    =raw @post.content
+  .bottom
+    .left
+      tags
+    .right
+      %a add_to_favorite
+      %a i_like_it
+  .clear
+  .comments
+    %h2.header
+      =curly_header t("comment.header", :n => @post.comments.count)
+    .comments_list
+      =nested_comments(@comments)
+    .add_comment
+      %h2=t("comment.new.title")
+      =render("comments/form", :reply_form => false)
+    .reply_form
+      =render("comments/form", :form_id => "reply_form", :reply_form => true)

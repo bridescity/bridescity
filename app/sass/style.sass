@@ -24,9 +24,23 @@ body
 	color: $dark-grey
 
 /* links */
-a
+$link-color: #1489bf
+$link-color-hover: #bb145f
+
+a, .js_link
+	color: $link-color
+	&:visited
+		color: $link-color
+	&:hover
+		color: $link-color-hover
+		border-color: $link-color-hover
 	&.big_link
 		font: 1.5em/1.5em $sans-serif
+
+.js_link
+	border-bottom: dashed 1px $link-color
+	cursor: pointer
+
 /* headers */
 h1
 	font: 2em/2em $sans-serif
@@ -66,10 +80,11 @@ form
 		height: 1.5em
 		margin: 0
 		padding: 5px
-		background: url(images/inner_shadow.png) no-repeat
-		border: solid 1px #bbb
+		/*background: url(images/inner_shadow.png) no-repeat*/
+		border: solid 1px
+		border-color: #aaa #ddd #ddd #aaa
 		&:focus
-			border: solid 1px #888
+			border-color: #666 #999 #999 #666
 		&.small
 			width: $form_input_width / 2
 		&.large
@@ -172,6 +187,7 @@ dl.values
 div.block
 	padding-bottom: 1em
 
+
 .curly_header
 	text-align: center
 	vertical-align: bottom
@@ -239,22 +255,37 @@ div.block
 	background: url(images/likes.png) 0 5px no-repeat
 	padding-left: 15px
 
+$comment_left_column_height: 60px
+
 /* comments */
 .comments
-	.new
-	h2.header
-		text-align: center
 	.comment
-		margin-bottom: 1em
-		.comment-info
-			clear: both
-		.actions
-			clear:both
-	.small-avatar
-		border: 2px solid #666
-		margin: 0 10px 0 0
-		height: 50px
-		width: 50px
-	.content
-		height: 120px
-		width: 100%
+		.comment_body
+			overflow: hidden
+			margin: 1em 0 0 0
+			padding: 1em 0 0 0
+			border-top: dotted 1px #aaa
+			.comment_left
+				float: left
+			.comment_right
+				margin: -0.5em 0 0 $comment_left_column_height
+				.comment_date
+					color: $light-grey
+					margin: 0 0 0 1em
+			.comment_reply
+				font-size: 1em
+			.comment_form
+				margin-top: 1em
+	.comment_form
+		margin: 1em 0 0 0
+		textarea
+			width: 95%
+			height: 100px
+		.buttons
+			margin-top: 1em
+	.nested_comments
+		margin: -0.5em 0 0 $comment_left_column_height
+	.add_comment
+		padding: 2em 0 0 $comment_left_column_height
+	.reply_form
+		display: none

@@ -1,6 +1,8 @@
 module ApplicationHelper
-	def button value, options = {:class => ""}
-		content_tag :button, value, options
+	def button value, options = {}
+    options[:type] = "button"
+    options[:value] = value
+    content_tag :input, "", options
 	end
 
 	def edit_current_user_path
@@ -50,5 +52,10 @@ module ApplicationHelper
       content_tag :h2, data.html_safe, options
     end
 
+    def js_link(title = "Curly header", options = {})
+      options[:class] ||= ""
+      options[:class]  << " js_link"
+      content_tag :span, title, options
+    end
 
 end

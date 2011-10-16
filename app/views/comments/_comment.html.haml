@@ -1,23 +1,8 @@
-.comment{:id => "comment_#{comment.id}"}
-  .comment-head
-    .comment-info
-      =#comment.user.profile.image.url(:medium)
-      .small-avatar.left
-        =image_tag comment.user.profile.image(:small)
-      .author.left
-      =link_to comment.user.profile.full_name, user_path(comment.user), :class => "author"
-      %br
-      .created-at.right
-        =comment.created_at.strftime("%e.%m.%Y %T")
-
-  .comment_message
-    =comment.content
-  .actions
-    =link_to "Ответить", "#", :class => "reply" if user_signed_in?
-    .likes-small.right
-      0
-
-  -if user_signed_in?
-    -@parent = comment
-    .reply{:style => "display:none;"}
-      =render "comments/form"
+.comment_body{:id => "comment_#{comment.id}", :"data-id" => comment.id}
+  .comment_left
+    =image_tag comment.user.profile.image(:small)
+  .comment_right
+    =link_to comment.user.profile.full_name, user_path(comment.user), :class => "comment-author"
+    %span.comment_date=comment.created_at.strftime("%e.%m.%Y %T")
+    .comment_content=comment.content
+    =js_link t("comment.reply"), :class => "comment_reply"

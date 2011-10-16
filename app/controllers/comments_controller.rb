@@ -10,10 +10,14 @@ class CommentsController < ApplicationController
     @commentable = find_commentable
     @comment = @commentable.comments.new(params[:comment])
     @comment.user = current_user
-    if @comment.save
-      redirect_to @commentable, :anchor => "#comment_#{@comment.id}"
-    else
-      redirect_to @commentable, :anchor => "#comment_#{@comment.id}"
+    respond_to do |format|
+      if @comment.save
+        format.html{render(@comment)}
+      else
+        format.html{
+          #TODO: error handler
+        }
+      end
     end
   end
 

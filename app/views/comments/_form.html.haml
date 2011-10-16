@@ -1,9 +1,8 @@
 .comment_form
-  -form_for [@commentable, @comment] do |form|
-    =form.hidden_field :parent_id
-    %p
-      %h2
-        =t("comment.new.header")
-      =form.text_area :content, :class => "content"
-    %p
-      =form.submit t("comment.new.button")
+  -form_for [@commentable, @comment], :remote => true, :html => {:id => (form_id rescue "comment_new")} do |form|
+    -if reply_form
+      =form.hidden_field :parent_id, :class => "id"
+    =form.text_area :content, :class => "content"
+    %p.buttons
+      =form.submit t("comment.form.submit")
+      =button t("comment.form.cancel"), :class => "cancel"
