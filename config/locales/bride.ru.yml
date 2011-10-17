@@ -22,6 +22,7 @@ ru:
       bride_profile:
         wedding_date: "Дата свадьбы"
         about_wedding: "О моей свадьбе"
+        comments: "Комментарии"
         city_name: "Город"
         first_name: "Имя"
         last_name: "Фамилия"

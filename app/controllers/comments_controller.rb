@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     #TODO: move to anchor after redirect
-    @commentable = find_commentable
+    @commentable = params[:comment][:commentable_type].classify.constantize.find(params[:comment][:commentable_id])
     @comment = @commentable.comments.new(params[:comment])
     @comment.user = current_user
     respond_to do |format|
@@ -20,16 +20,4 @@ class CommentsController < ApplicationController
       end
     end
   end
-
-  private
-
-    def find_commentable
-      params.each do |name, value|
-        if name =~ /(.+)_id$/ && name != "parent_id"
-          return $1.classify.constantize.find(value)
-        end
-      end
-      nil
-    end
-
 end

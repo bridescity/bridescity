@@ -28,3 +28,9 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение"
         remember_me: "Запомнить меня"
+  activerecord:
+    models:
+      user: "Пользователь"
+    attributes:
+      user:
+        wall_comments: "Комментарии"

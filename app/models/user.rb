@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :commented_posts, :through => :comments, :source => :commentable, :source_type => "Post"
 
+  has_many :wall_comments, :class_name => "Comment", :as => :commentable
+
   def is_bride?
     type = "Bride"
   end

@@ -23,8 +23,7 @@
       %a i_like_it
   .clear
   .comments
-    %h2.header
-      =curly_header t("comment.header", :n => @post.comments.count)
+    =curly_header t("comment.header", :n => @comments.count)
     .comments_list
       =nested_comments(@comments)
     .add_comment

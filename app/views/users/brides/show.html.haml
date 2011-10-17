@@ -16,3 +16,11 @@
         .block
             =curly_header BrideProfile.human_attribute_name(:about_wedding)
             %div=@user.profile.about_wedding
+        .block.comments
+            =curly_header t("comment.header", :n => @comments.count)
+            .comments_list
+                =nested_comments(@comments)
+            .add_comment
+                =render("comments/form", :reply_form => false)
+            .reply_form
+                =render("comments/form", :form_id => "reply_form", :reply_form => true)

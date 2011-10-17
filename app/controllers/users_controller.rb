@@ -1,19 +1,21 @@
 class UsersController < ApplicationController
 
-	def show
-		@user = params[:id] ? User.find(params[:id]) : current_user
-		respond_to do |format|
-			format.html { render "users/#{@user.type.downcase.pluralize}/show" }
-		end
-	end
+  def show
+    @user = @commentable = params[:id] ? User.find(params[:id]) : current_user
+    @comment = @user.wall_comments.new
+    @comments = @user.wall_comments.scoped.arrange(:order => :created_at)
+    respond_to do |format|
+      format.html { render "users/#{@user.type.downcase.pluralize}/show" }
+    end
+  end
 
-	def edit
-		@user = params[:id] ? User.find(params[:id]) : current_user
-		respond_to do |format|
-			format.html { render "users/#{@user.type.downcase.pluralize}/edit" }
-		end
-	end
+  def edit
+    @user = params[:id] ? User.find(params[:id]) : current_user
+    respond_to do |format|
+      format.html { render "users/#{@user.type.downcase.pluralize}/edit" }
+    end
+  end
 
-	def update
-	end
+  def update
+  end
 end

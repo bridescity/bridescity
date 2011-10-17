@@ -8,9 +8,16 @@ Bridescity::Application.routes.draw do
   devise_for :vendors, :controllers => {:registrations => "registrations"}
   devise_for :staffs, :controllers => {:registrations => "registrations"}
 
-  resources :users
+  resources :users do
+    resources :comments
+  end
+
   resources :vendors
-  resources :brides
+
+  resources :brides do
+    resources :comments
+  end
+
 
   resources :bride_profiles
 
