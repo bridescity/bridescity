@@ -1,22 +1,50 @@
 -content_for :styles do
     =stylesheet_link_tag "pages/profile"
 %div#profile
+    %div.main_wrapper
+        %div.main
+            %h1
+                =@user.profile.full_name
+                -if @user == current_user
+                    =link_to t("user.edit.profile.link"), edit_profile_path, :class => "header_small_link"
+            .block
+                =values_for @user.profile do |fields|
+                    =fields.value :wedding_date
+                    =fields.value :city_name
+                    =fields.value :registry_name
+            -if @user.profile.about_wedding && !@user.profile.about_wedding.empty?
+                .block
+                    =curly_header BrideProfile.human_attribute_name(:about_wedding)
+                    %div=@user.profile.about_wedding
+            .block.comments
+                =curly_header t("comment.header", :n => @comments.count)
+                .comments_list
+                    =nested_comments(@comments)
+                .add_comment
+                    =render("comments/form", :reply_form => false)
+                .reply_form
+                    =render("comments/form", :form_id => "reply_form", :reply_form => true)
+            .block
+                =curly_header t("user.profile.activity")
+                .events
+                    =render "events"
     %div.sidebar
         =image_tag @user.profile.image.url:large
-    %div.main
-        %h1
-            =@user.profile.full_name
+        .block.user_actions
             -if @user == current_user
-                =link_to t("user.edit.profile.link"), edit_profile_path, :class => "header_small_link"
-        .block
-            =values_for @user.profile do |fields|
-                =fields.value :wedding_date
-                =fields.value :city_name
-                =fields.value :registry_name
-        .block
-            =curly_header BrideProfile.human_attribute_name(:about_wedding)
-            %div=@user.profile.about_wedding
-        .block
-            =curly_header t("user.profile.activity")
-            .events
-                =render "events"
+                %div
+                    =link_to User.human_attribute_name(:messages), user_messages_path(current_user)
+            -else
+                -if @friendship
+                    %div
+                        =link_to t("friendship.remove"), friendship_path(@friendship), :method => :delete
+                -else
+                    %div
+                        =link_to t("friendship.request"), new_friendship_path
+            %div
+                =link_to t("message.new.link"), new_user_message_path(@user)
+        .sidebar_block.friends
+            %h2=t("user.friends.title")
+            -@user.friends.each do |friend|
+                =user_preview friend, :small
+            .clear

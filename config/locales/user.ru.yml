@@ -23,6 +23,8 @@ ru:
     toolbar:
       not_member: "Еще не стали участником?"
       signed_as: "Вы вошли как "
+    friends:
+      title: "Друзья"
   formtastic:
     labels:
       user:
@@ -30,3 +32,10 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение"
         remember_me: "Запомнить меня"
+  activerecord:
+    models:
+      user: "Пользователь"
+    attributes:
+      user:
+        messages: "Сообщения"
+        wall_comments: "Комментарии"

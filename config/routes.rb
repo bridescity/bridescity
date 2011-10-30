@@ -8,9 +8,16 @@ Bridescity::Application.routes.draw do
   devise_for :vendors, :controllers => {:registrations => "registrations"}
   devise_for :staffs, :controllers => {:registrations => "registrations"}
 
-  resources :users
+  resources :users do
+    resources :messages
+    resources :comments
+  end
+
   resources :vendors
-  resources :brides
+
+  resources :brides do
+    resources :comments
+  end
 
   resources :bride_profiles
 
@@ -24,6 +31,13 @@ Bridescity::Application.routes.draw do
   match "brides/:id" => "users#show", :as => :bride
   root :to => "application#index"
   resources :comments
+  resources :messages
+
+  resources :friendships do
+    collection do
+     delete :remove
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

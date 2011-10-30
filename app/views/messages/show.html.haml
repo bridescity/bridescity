@@ -1,0 +1,12 @@
+.message_show
+    %div.title
+        =user_preview @message.sender, :small
+        =link_to @message.sender.profile.full_name, user_path(@message.sender), :class => "user_name"
+        %div.date=@message.created_at
+    -unless @message.subject.empty?
+        %h3=@message.subject
+    .body=@message.body
+    .actions
+        =link_to t("message.all.delete"), message_path(@message), :method => :delete
+        =link_to t("message.all.reply"), new_user_message_path(@message.sender)
+    

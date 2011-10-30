@@ -1,7 +1,5 @@
 class Comment < ActiveRecord::Base
-
   after_save :raise_event
-
   has_ancestry
 
   belongs_to :commentable, :polymorphic => true

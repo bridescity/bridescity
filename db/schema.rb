@@ -61,6 +61,14 @@ ActiveRecord::Schema.define(:version => 20111030144721) do
     t.datetime "updated_at"
   end
 
+  create_table "friendships", :force => true do |t|
+    t.integer  "inviter_id"
+    t.integer  "invited_id"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "likes", :force => true do |t|
     t.integer  "likeable_id"
     t.string   "likeable_type"
@@ -81,6 +89,16 @@ ActiveRecord::Schema.define(:version => 20111030144721) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "subject"
+    t.text     "body"
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.boolean  "read",        :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "registries", :force => true do |t|

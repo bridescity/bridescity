@@ -1,14 +1,18 @@
-#profile .sidebar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200px;
-  padding: 10px; }
-#profile .main {
-  margin: 0 0 0 220px;
-  padding: 0 10px; }
-#profile h1 {
-  font-style: italic; }
+#profile {
+  position: relative; }
+  #profile .sidebar {
+    float: left;
+    width: 200px;
+    margin: 0 0 0 -100%;
+    padding: 10px; }
+  #profile .main_wrapper {
+    float: left;
+    width: 100%; }
+    #profile .main_wrapper .main {
+      margin: 0 0 0 220px;
+      padding: 0 10px; }
+  #profile h1 {
+    font-style: italic; }
 
 #profile_edit .profile_image {
   margin-left: 135px; }

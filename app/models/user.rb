@@ -20,6 +20,12 @@ class User < ActiveRecord::Base
   has_many :commented_posts, :through => :comments, :source => :commentable, :source_type => "Post"
 
   has_many :events
+  has_many :wall_comments, :class_name => "Comment", :as => :commentable
+
+  # Messages
+  has_many :sent_messages, :class_name => 'Message', :order => 'created_at desc', :foreign_key => 'sender_id'
+  has_many :received_messages, :class_name => 'Message', :order => 'created_at desc', :foreign_key => 'receiver_id'
+  has_many :unread_messages, :class_name => 'Message', :conditions => {:read => false}, :foreign_key => 'receiver_id'
 
   def is_bride?
     type = "Bride"
@@ -28,5 +34,4 @@ class User < ActiveRecord::Base
   def is_vendor?
     type = "Vendor"
   end
-
 end

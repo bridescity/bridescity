@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: bridescity_production
   pool: 5
-  username: dbuser
+  username: root
   password: qweqwe
   host: localhost

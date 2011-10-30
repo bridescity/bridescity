@@ -58,4 +58,14 @@ module ApplicationHelper
       content_tag :span, title, options
     end
 
+    def user_preview(user, size, options = {})
+      options[:class] ||= ""
+      options[:class]  << " user_preview " << size.to_s
+
+      data = "" << image_tag(user.profile.image(size)) << content_tag(:div, user.profile.full_name, :class => "name")
+      link = link_to data.html_safe, user_path(user)
+
+      content_tag :div, link, options
+    end
+
 end

@@ -2,6 +2,8 @@
   -form_for [@commentable, @comment], :remote => true, :html => {:id => (form_id rescue "comment_new")} do |form|
     -if reply_form
       =form.hidden_field :parent_id, :class => "id"
+    =form.hidden_field :commentable_type, :class => "commentable_type"
+    =form.hidden_field :commentable_id, :class => "commentable_id"
     =form.text_area :content, :class => "content"
     %p.buttons
       =form.submit t("comment.form.submit")

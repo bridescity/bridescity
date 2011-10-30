@@ -1,16 +1,20 @@
 $sidebar_width: 200px
 #profile
-	.sidebar
-		position: absolute
-		left: 0
-		top: 0
-		width: $sidebar_width
-		padding: 10px
-	.main
-		margin: 0 0 0 ($sidebar_width + 20px)
-		padding: 0 10px
-	h1
-		font-style: italic
+    position: relative
+    .sidebar
+        float: left
+        width: $sidebar_width
+        margin: 0 0 0 -100%
+        padding: 10px
+
+    .main_wrapper
+        float: left
+        width: 100%
+        .main
+            margin: 0 0 0 ($sidebar_width + 20px)
+            padding: 0 10px
+    h1
+        font-style: italic
 
 #profile_edit .profile_image
-	margin-left: 135px
+    margin-left: 135px
