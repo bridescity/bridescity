@@ -1,0 +1,6 @@
+ru:
+  events:
+    comment:
+      created: "Пользователь %{username} написал комментарий: '%{comment}'"
+    post:
+      created: "Пользователь %{username} создал пост: '%{post_title}'"

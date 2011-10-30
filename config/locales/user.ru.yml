@@ -1,6 +1,6 @@
 ru:
   user:
-    login: 
+    login:
       title: "Вход"
       link: "Войти"
       submit: "Войти"
@@ -18,6 +18,8 @@ ru:
     edit:
       profile:
         link: "Изменить данные"
+    profile:
+      activity: "Активность"
     toolbar:
       not_member: "Еще не стали участником?"
       signed_as: "Вы вошли как "

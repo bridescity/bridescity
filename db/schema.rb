@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20111030144721) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "type_id"
     t.integer  "eventable_id"
     t.string   "eventable_type"
     t.datetime "created_at"

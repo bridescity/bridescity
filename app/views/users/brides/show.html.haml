@@ -16,3 +16,7 @@
         .block
             =curly_header BrideProfile.human_attribute_name(:about_wedding)
             %div=@user.profile.about_wedding
+        .block
+            =curly_header t("user.profile.activity")
+            .events
+                =render "events"
