@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110905235728) do
+ActiveRecord::Schema.define(:version => 20111030144721) do
 
   create_table "bride_profiles", :force => true do |t|
     t.string   "first_name"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(:version => 20110905235728) do
   end
 
   add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+
+  create_table "events", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "eventable_id"
+    t.string   "eventable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "favorites", :force => true do |t|
     t.integer  "favorable_id"
