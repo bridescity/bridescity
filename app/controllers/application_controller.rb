@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery
 
   def index
@@ -13,5 +12,4 @@ class ApplicationController < ActionController::Base
   def current_user
   	super || current_bride || current_vendor || current_staff
   end
-
 end

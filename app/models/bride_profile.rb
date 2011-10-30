@@ -3,7 +3,7 @@ class BrideProfile < ActiveRecord::Base
   has_attached_file :image, :styles => {
     :large => "200x", 
     :medium => "100x100#",
-    :small => "50x50#"
+    :small => "60x60#"
   }
 
   belongs_to :user, :foreign_key => :user_id

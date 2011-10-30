@@ -1,0 +1,6 @@
+=semantic_form_for @message do |message|
+    =message.input :receiver_id, :as => :hidden
+    =message.input :subject
+    =message.input :body
+    =message.buttons do
+        =message.submit

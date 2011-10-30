@@ -1,15 +1,15 @@
 @mixin reset
-	margin: 0
-	padding: 0
-	border: 0
+    margin: 0
+    padding: 0
+    border: 0
 
 @mixin clear
-	clear: both
+    clear: both
 
 @mixin border-radius($radius)
-	-moz-border-radius: $radius
-	border-radius: $radius
-	-webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    border-radius: $radius
+    -webkit-border-radius: $radius
 
 $dark_beige: #ede6cf
 $light_beige: #f0ebce
@@ -19,273 +19,341 @@ $dark_grey: #222
 $light-grey: #888
 
 body
-	font: 13px/2em $sans-serif
-	background: #fff
-	color: $dark-grey
+    font: 13px/1.75em $sans-serif
+    background: #fff
+    color: $dark-grey
 
 /* links */
 $link-color: #1489bf
 $link-color-hover: #bb145f
 
 a, .js_link
-	color: $link-color
-	&:visited
-		color: $link-color
-	&:hover
-		color: $link-color-hover
-		border-color: $link-color-hover
-	&.big_link
-		font: 1.5em/1.5em $sans-serif
+    color: $link-color
+    &:visited
+        color: $link-color
+    &:hover
+        color: $link-color-hover
+        border-color: $link-color-hover
+    &.big_link
+        font: 1.5em/1.5em $sans-serif
 
 .js_link
-	border-bottom: dashed 1px $link-color
-	cursor: pointer
+    border-bottom: dashed 1px $link-color
+    cursor: pointer
 
 /* headers */
 h1
-	font: 2em/2em $sans-serif
-	margin: 0 0 0.5em 0
-	a.header_small_link
-		float: right
-		display: inline-block
-		font: 0.5em/1em $serif
-		margin: 1.5em 0 0 1em
+    font: 2em/2em $sans-serif
+    margin: 0 0 0.5em 0
+    a.header_small_link
+        float: right
+        display: inline-block
+        font: 0.5em/1em $serif
+        margin: 1.5em 0 0 1em
 
 h2
-	margin: 0 0 0.5em 0
-	font: italic 1.5em/1.5em $sans-serif
-	color: #666
+    margin: 0 0 0.5em 0
+    font: italic 1.5em/1.5em $sans-serif
+    color: #666
 /* basic */
 .left
-	float: left
+    float: left
 .right
-	float: right
+    float: right
 .clear
-	clear: both
+    clear: both
 
 /* forms */
 $form_label_width: 120px
-$form_line_padding: 5px
+$form_line_padding: 2px
 $form_input_width: 200px
 
 form
-	fieldset, fieldset ol
-		@include reset
-	fieldset
-		margin: 0 0 20px 0
-	/*text fields*/
-	input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number], textarea, select
-		@include border-radius (2px)
-		width: $form_input_width
-		height: 1.5em
-		margin: 0
-		padding: 5px
-		/*background: url(images/inner_shadow.png) no-repeat*/
-		border: solid 1px
-		border-color: #aaa #ddd #ddd #aaa
-		&:focus
-			border-color: #666 #999 #999 #666
-		&.small
-			width: $form_input_width / 2
-		&.large
-			width: $form_input_width * 2
-	textarea
-		width: $form_input_width * 2
-		height: 180px
+    fieldset, fieldset ol
+        @include reset
+    fieldset
+        margin: 0 0 20px 0
+    /*text fields*/
+    input[type=text], input[type=password], input[type=email], input[type=url], input[type=color], input[type=number], textarea, select
+        @include border-radius (2px)
+        width: $form_input_width
+        height: 1.5em
+        margin: 0
+        padding: 5px
+        /*background: url(images/inner_shadow.png) no-repeat*/
+        border: solid 1px
+        border-color: #aaa #ddd #ddd #aaa
+        &:focus
+            border-color: #666 #999 #999 #666
+        &.small
+            width: $form_input_width / 2
+        &.large
+            width: $form_input_width * 2
+    textarea
+        width: $form_input_width * 2
+        height: 180px
 
-	select
-		height: 2.5em
-		padding: 5px
+    select
+        height: 2.5em
+        padding: 5px
 
-	/*radio & checkbox*/
-	input[type=checkbox], input[type=radio]
-		padding: 0
-		margin: 0 5px 0 0
+    /*radio & checkbox*/
+    input[type=checkbox], input[type=radio]
+        padding: 0
+        margin: 0 5px 0 0
 
-	/*buttons*/
-	input[type=submit], input[type=button], input[type=reset], button
-		line-height: 1.5em
-		padding: 5px 10px
-		text-align: center
-		background: #eee
-		border: solid 1px #999
-		border-radius: 5px
-		&:hover
-			background: $dark_beige
+    /*buttons*/
+    input[type=submit], input[type=button], input[type=reset], button
+        line-height: 1.5em
+        padding: 5px 10px
+        text-align: center
+        background: #eee
+        border: solid 1px #999
+        border-radius: 5px
+        &:hover
+            background: $dark_beige
 
-	li.input
-		position: relative
-		margin: 0 0 15px -5px
-		list-style: none
-		.label
-			display: inline-block
-			width: $form_label_width - 10px
-			margin: 0 10px 0 0
-			padding: ($form_line_padding + 1px) 10px $form_line_padding $form_line_padding
-			border-bottom: dashed 1px #ccc
-		&.stringish, &.text,
-			input, textarea
-				display: inline-block
-			input
-				bottom: 0
-			textarea
-				top: 0
-		&.boolean
-			margin-left: $form_label_width
-			padding: $form_line_padding 0
-		&.radio
-			fieldset
-				@include reset
-				legend
-					@include reset
-					float: left
-				ol
-					@include reset
-					list-style: none
-					margin-left: $form_label_width
-		&.date
-			legend
-				float: left
-			.fragments-group
-				list-style: none
-				float: left
-				.fragment
-					float: left
-					margin-right: 10px
-					label
-						display: none
-					select
-						width: $form_input_width / 2
-		.inline-errors
-			@include reset
-			dislpay: block
-			position: absolute
-			overflow: hidden
-			width: 200px
-			left: $form_label_width + $form_input_width + 20px
-			top: 0
-			z-index: 100
+    li.input
+        position: relative
+        margin: 0 0 15px -5px
+        list-style: none
+        .label
+            display: inline-block
+            width: $form_label_width - 10px
+            margin: 0 10px 0 0
+            padding: ($form_line_padding + 1px) 10px $form_line_padding $form_line_padding
+            border-bottom: dashed 1px #ccc
+        &.stringish, &.text,
+            input, textarea
+                display: inline-block
+            input
+                bottom: 0
+            textarea
+                top: 0
+        &.boolean
+            margin-left: $form_label_width
+            padding: $form_line_padding 0
+        &.radio
+            fieldset
+                @include reset
+                legend
+                    @include reset
+                    float: left
+                ol
+                    @include reset
+                    list-style: none
+                    margin-left: $form_label_width
+        &.date
+            legend
+                float: left
+            .fragments-group
+                list-style: none
+                float: left
+                .fragment
+                    float: left
+                    margin-right: 10px
+                    label
+                        display: none
+                    select
+                        width: $form_input_width / 2
+        .inline-errors
+            @include reset
+            dislpay: block
+            position: absolute
+            overflow: hidden
+            width: 200px
+            left: $form_label_width + $form_input_width + 20px
+            top: 0
+            z-index: 100
 
-	.buttons
-		@include reset
-		input, button
-			margin: 0 10px 0 0
-		ol
-			@include reset
-			margin: 0 0 0 $form_label_width + 10px
+    .buttons
+        @include reset
+        input, button
+            margin: 0 10px 0 0
+        ol
+            @include reset
+            margin: 0 0 0 $form_label_width + 10px
 
 dl.values
-	clear: both
-	overflow:hidden
-	dt
-		float: left
-		width: $form_label_width
-		color: #666
-	dd
-		margin: 0 0 0 ($form_label_width+10px)
+    clear: both
+    overflow:hidden
+    dt
+        float: left
+        width: $form_label_width
+        color: #666
+    dd
+        margin: 0 0 0 ($form_label_width+10px)
 
 div.block
-	padding-bottom: 1em
+    padding-bottom: 1em
 
+.sidebar_block
+    position: relative
+    border: solid 1px #ccc
+    padding: .7em .3em .3em .3em
+    margin: 0.5em 0 1em 0
+    h2
+        position: absolute
+        top: -1em
+        left: 5px
+        display: inline-block
+        background: #fff
+        font: 13px/20px $serif
+        text-transform: uppercase
 
 .curly_header
-	text-align: center
-	vertical-align: bottom
-	overflow: hidden
-	color: $dark_grey
-	.wrapper
-		position: relative
-	.curl_left
-		position: absolute
-		left: -300px
-		top: -4px
-		display: inline-block
-		height: 32px
-		width: 300px
-		background: url("images/block-separator-lcurl.png") no-repeat scroll right
-	.curl_right
-		position: absolute
-		right: -300px
-		top: -3px
-		display: inline-block
-		height: 32px
-		width: 300px
-		background: url("images/block-separator-rcurl.png") no-repeat left
-	.curl_middle
-		display: inline-block
-		background: #fff
-		padding: 0 10px
-		position: relative
+    text-align: center
+    vertical-align: bottom
+    overflow: hidden
+    color: $dark_grey
+    .wrapper
+        position: relative
+    .curl_left
+        position: absolute
+        left: -300px
+        top: -4px
+        display: inline-block
+        height: 32px
+        width: 300px
+        background: url("images/block-separator-lcurl.png") no-repeat scroll right
+    .curl_right
+        position: absolute
+        right: -300px
+        top: -3px
+        display: inline-block
+        height: 32px
+        width: 300px
+        background: url("images/block-separator-rcurl.png") no-repeat left
+    .curl_middle
+        display: inline-block
+        background: #fff
+        padding: 0 10px
+        position: relative
 
 /* post */
 .post
-	.info
-		margin: 2em 0 5em 0
-		text-align: center
-		.category
-			font: 2em/2em $sans-serif
-			margin: 0 0 0 0
-		h1
-			margin: 0 4em 1em 4em
-			font: 2em/1.2em $sans-serif
-		.author
-			color: $light-grey
-			font: italic 1em/2em $sans-serif
-		.counters
-			margin: 0 0 2em 0
-			overflow: hidden
-			border-bottom: solid #666 1px
-			.date
-				font: italic 1em/2em $sans-serif
-				color: $light-grey
+    .info
+        margin: 2em 0 5em 0
+        text-align: center
+        .category
+            font: 2em/2em $sans-serif
+            margin: 0 0 0 0
+        h1
+            margin: 0 4em 1em 4em
+            font: 2em/1.2em $sans-serif
+        .author
+            color: $light-grey
+            font: italic 1em/2em $sans-serif
+        .counters
+            margin: 0 0 2em 0
+            overflow: hidden
+            border-bottom: solid #666 1px
+            .date
+                font: italic 1em/2em $sans-serif
+                color: $light-grey
 
 .post-thumb
-	h4
-		margin: 10px 0
-	float: left
-	margin: 0 20px 20px 0
-	width: 200px
+    h4
+        margin: 10px 0
+    float: left
+    margin: 0 20px 20px 0
+    width: 200px
 
 .posts
-	margin-top: 10px
+    margin-top: 10px
 
 .likes-small
-	float: right
-	font: 13px/20px Georgia
-	background: url(images/likes.png) 0 5px no-repeat
-	padding-left: 15px
+    float: right
+    font: 13px/20px Georgia
+    background: url(images/likes.png) 0 5px no-repeat
+    padding-left: 15px
 
-$comment_left_column_height: 60px
+$comment_left_column_height: 70px
 
 /* comments */
 .comments
-	.comment
-		.comment_body
-			overflow: hidden
-			margin: 1em 0 0 0
-			padding: 1em 0 0 0
-			border-top: dotted 1px #aaa
-			.comment_left
-				float: left
-			.comment_right
-				margin: -0.5em 0 0 $comment_left_column_height
-				.comment_date
-					color: $light-grey
-					margin: 0 0 0 1em
-			.comment_reply
-				font-size: 1em
-			.comment_form
-				margin-top: 1em
-	.comment_form
-		margin: 1em 0 0 0
-		textarea
-			width: 95%
-			height: 100px
-		.buttons
-			margin-top: 1em
-	.nested_comments
-		margin: -0.5em 0 0 $comment_left_column_height
-	.add_comment
-		padding: 2em 0 0 0
-	.reply_form
-		display: none
+    .comment
+        .comment_body
+            overflow: hidden
+            margin: 1em 0 0 0
+            padding: 1em 0 0 0
+            border-top: dotted 1px #aaa
+            .comment_left
+                float: left
+            .comment_right
+                margin: -0.5em 0 0 $comment_left_column_height
+                .comment_date
+                    color: $light-grey
+                    margin: 0 0 0 1em
+            .comment_reply
+                font-size: 1em
+            .comment_form
+                margin-top: 1em
+    .comment_form
+        margin: 1em 0 0 0
+        textarea
+            width: 95%
+            height: 100px
+        .buttons
+            margin-top: 1em
+    .nested_comments
+        margin: -0.5em 0 0 $comment_left_column_height
+    .add_comment
+        padding: 2em 0 0 0
+    .reply_form
+        display: none
+
+/* User Preview */
+.user_preview
+    a
+        display: block
+    img
+        display: block
+    &.small
+        float: left
+        margin: 2px
+        img
+            width: 60px
+            height: 60px
+        .name
+            display: none
+
+.message_preview
+    position: relative
+    overflow: hidden
+    padding-bottom: 1em
+    margin-bottom: 1em
+    border-bottom: dotted 1px #ccc
+    .left_col
+        position: absolute
+        overflow: hidden
+    .right_col
+        margin: -0.5em 0 0 70px
+    .user_name
+        color: $dark-grey
+        font-weight: bold
+        font-style: italic
+        text-decoration: none
+    .message_link
+        display: block
+        padding: 5px
+        margin: -5px
+        color: #222
+        text-decoration: none
+        &:hover
+            background: #f2f2f2
+    .date
+        float: right
+        font-style: italic
+        color: $light-grey
+
+.message_show
+    .title
+        overflow: hidden
+        margin: 0 0 1em 0
+        .user_preview
+            margin-right: 10px
+    .actions
+        text-align: right
+        a
+            margin-left: 10px
