@@ -1,112 +1,115 @@
 @import "style"
 
 @mixin center
-	width: 940px
-	margin-left: auto
-	margin-right: auto
+  width: 940px
+  margin-left: auto
+  margin-right: auto
 
 #toolbar_wrapper
-	padding: 10px
-	background: #222
-	color: #aaa
-	#toolbar
-		@include center
-		overflow: hidden
-		a
-			color: #fff
-		.left
-			float: left
-		.right
-			float: right
-		.session_action
-			margin-left: 10px
-			padding-left: 10px
-			border-left: solid 1px #aaa
+  padding: 10px
+  background: #222
+  color: #aaa
+  #toolbar
+    @include center
+    overflow: hidden
+    a
+      color: #fff
+    .left
+      float: left
+    .right
+      float: right
+    .session_action
+      margin-left: 10px
+      padding-left: 10px
+      border-left: solid 1px #aaa
 
 
 header
-	@include center
-	padding: 10px
-	overflow: hidden
-	#logo
-		float: left
-		width: 256px
-		height: 81px
-		background: url(images/logo.png)
-	#search
-		float: right
+  @include center
+  padding: 10px
+  overflow: hidden
+  #logo
+    float: left
+    width: 256px
+    height: 81px
+    background: url(images/logo.png)
+  #search
+    float: right
 nav
-	@include center
-	@include clear
-	overflow: hidden
-	padding: 10px 10px
-	background: $dark_beige
-	a
-		display: block
-		float: left
-		padding: 5px 10px
-		color: #222
-		border-right: solid 1px #aaa
-		text-decoration: none
-		&:hover
-			background: $light_beige
-		&:visited
-			color: #222
-	a.last
-		border: none
+  @include center
+  @include clear
+  overflow: hidden
+  padding: 10px 10px
+  background: $dark_beige
+  a
+    display: block
+    float: left
+    padding: 5px 10px
+    color: #222
+    border-right: solid 1px #aaa
+    text-decoration: none
+    &:hover
+      background: $light_beige
+    &:visited
+      color: #222
+  a.last
+    border: none
 
 #notices
-	@include center
+  @include center
 
 #main
-	@include center
-	overflow: hidden
-	position: relative
-	width: 960px
-	margin-top: 10px
-	margin-bottom: 40px
-	overflow: hidden
+  @include center
+  overflow: hidden
+  position: relative
+  width: 960px
+  margin-top: 10px
+  margin-bottom: 40px
+  overflow: hidden
 
 $aside_width: 250px
 
-#content
-	margin: 0 ($aside_width + 20px) 0 0
-	padding: 0 10px
+#content_wrapper
+  float: left
+  width: 100%
+  #content
+    margin: 0 ($aside_width + 20px) 0 0
+    padding: 0 10px
 
 aside
-	position: absolute
-	right: 0
-	top: 0
-	width: $aside_width
-	padding: 10px
-	background: #FCFAF5
+  float: right
+  width: $aside_width
+  margin: 0 0 0 -100%
+  padding: 10px
+  padding: 10px
+  background: #FCFAF5
 
 footer
-	@include center
-	padding: 10px
-	border-top: solid 1px #222
+  @include center
+  padding: 10px
+  border-top: solid 1px #222
 
 
 .talking-head
-	position: relative
-	img
-		float: left
-		width: 100px
-	.cloud
-		background: #f1ebc9
-		display: table-cell
-		padding: 10px
-		margin-top: 0px
-		height: 130px
-		text-align: center
-		vertical-align: middle
-		width: 140px
-		font: 12px/1.5em $sans-serif
-	.arrow
-		position: absolute
-		background: url(images/talking-head-arrow.png)
-		height: 13px
-		left: 80px
-		position:absolute
-		top: 85px
-		width: 23px
+  position: relative
+  img
+    float: left
+    width: 100px
+  .cloud
+    background: #f1ebc9
+    display: table-cell
+    padding: 10px
+    margin-top: 0px
+    height: 130px
+    text-align: center
+    vertical-align: middle
+    width: 140px
+    font: 12px/1.5em $sans-serif
+  .arrow
+    position: absolute
+    background: url(images/talking-head-arrow.png)
+    height: 13px
+    left: 80px
+    position:absolute
+    top: 85px
+    width: 23px

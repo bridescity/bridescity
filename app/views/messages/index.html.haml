@@ -1,7 +1,12 @@
+-content_for :styles do
+  =stylesheet_link_tag "pages/messages"
 %div#messages
-    =curly_header User.human_attribute_name(:messages) << " (#{@unread_messages.count})"
-    -if @unread_messages.empty?
+  .messages_content_wrapper
+    .messages_content
+      =curly_header t("message." << params[:type], :count => @unread_messages.length)
+      -if @unread_messages.empty?
         %div.empty=t("message.index.empty")
-    -else
+      -else
         -@unread_messages.each do |message|
-            =render "preview", :message => message
+          =render "preview", :message => message 
+  =render "panel"

@@ -1,0 +1,13 @@
+#messages {
+  position: relative; }
+  #messages .messages_panel {
+    float: left;
+    width: 150px;
+    margin: 0 0 0 -100%;
+    padding: 10px; }
+  #messages .messages_content_wrapper {
+    float: left;
+    width: 100%; }
+    #messages .messages_content_wrapper .messages_content {
+      margin: 0 0 0 170px;
+      padding: 0 10px; }

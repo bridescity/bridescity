@@ -6,29 +6,29 @@
 <!--[if IE 9 ]>    <html lang="ru" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="ru" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Brides City</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-	<!-- CSS : implied media="all" -->
-	<%= stylesheet_link_tag "normalize" %>
-	<%= stylesheet_link_tag "jquery-ui" %>
-  	<%= stylesheet_link_tag "layout" %>
-  	<%= yield :styles %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Brides City</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- CSS : implied media="all" -->
+  <%= stylesheet_link_tag "normalize" %>
+  <%= stylesheet_link_tag "jquery-ui" %>
+    <%= stylesheet_link_tag "layout" %>
+    <%= yield :styles %>
 
 
-	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-	<%= javascript_include_tag "lib/modernizr-1.7.min" %>
-	<%= javascript_include_tag "jquery.min" %>
-	<%= javascript_include_tag "jquery_plugins/jquery-ui.min" %>
-	<%= javascript_include_tag "jquery_ujs" %>
-	<%= javascript_include_tag "mf" %>
-	<%= javascript_include_tag "application" %>
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <%= javascript_include_tag "lib/modernizr-1.7.min" %>
+  <%= javascript_include_tag "jquery.min" %>
+  <%= javascript_include_tag "jquery_plugins/jquery-ui.min" %>
+  <%= javascript_include_tag "jquery_ujs" %>
+  <%= javascript_include_tag "mf" %>
+  <%= javascript_include_tag "application" %>
 </head>
 
 <body>
@@ -39,18 +39,19 @@
 <%= render "layouts/notices"%>
 
 <div id="main">
-	<div id="content"><%= yield %></div>
-  	<aside>
-  		<div class="talking-head">
-			<img src="/stylesheets/images/talkinghead.jpg" alt="" />
-			<div class="arrow"></div>
-			<div class="cloud">
-				Иногда при вёрстке возникает потребность в вертикальном выравнивании текста в блоке. Обычно этот вопрос решается использованием таблицы.
-			</div>
-		</div>
-  		<%# yield :aside%>
-
-  	</aside>
+  <div id="content_wrapper">
+    <div id="content"><%= yield %></div>
+  </div>
+  <aside>
+    <div class="talking-head">
+      <img src="/stylesheets/images/talkinghead.jpg" alt="" />
+      <div class="arrow"></div>
+      <div class="cloud">
+        Иногда при вёрстке возникает потребность в вертикальном выравнивании текста в блоке. Обычно этот вопрос решается использованием таблицы.
+      </div>
+    </div>
+    <%# yield :aside%>
+  </aside>
 </div>
 
 <%= render "layouts/footer" %>

@@ -1,5 +1,8 @@
 Bridescity::Application.routes.draw do
   
+  match "home/messages/:type" => "messages#index", :as => :user_messages
+  match "users/:id/friendship" => "friendships#create", :as => :user_friendship, :method => :post
+
   match "home" => "users#show", :as => :home
   match "edit" => "users#edit", :as => :edit_profile
 

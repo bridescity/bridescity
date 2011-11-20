@@ -1,0 +1,5 @@
+.messages_panel
+  %div
+    =link_to t("message.inbox", :count => @user.unread_messages.count), user_messages_path(:inbox) 
+  %div
+    =link_to t("message.sent", :count => @user.sent_messages.count), user_messages_path(:sent)

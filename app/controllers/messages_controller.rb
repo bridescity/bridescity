@@ -1,7 +1,14 @@
 class MessagesController < ApplicationController
   def index
     @user = current_user
-    @unread_messages = @user.unread_messages
+
+    if(params[:type] === "sent")
+      @unread_messages = @user.received_messages
+    elsif(params[:type] === "inbox")
+      @unread_messages = @user.unread_messages
+      @read_messages = @user.read_messages
+    end
+
     @to_list = @user.friends
 
     respond_to do |format|

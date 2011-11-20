@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   has_many :sent_messages, :class_name => 'Message', :order => 'created_at desc', :foreign_key => 'sender_id'
   has_many :received_messages, :class_name => 'Message', :order => 'created_at desc', :foreign_key => 'receiver_id'
   has_many :unread_messages, :class_name => 'Message', :conditions => {:read => false}, :foreign_key => 'receiver_id'
+  has_many :read_messages, :class_name => 'Message', :conditions => {:read => true}, :foreign_key => 'receiver_id'
 
   def is_bride?
     type = "Bride"

@@ -33,14 +33,14 @@
         .block.user_actions
             -if @user == current_user
                 %div
-                    =link_to User.human_attribute_name(:messages), user_messages_path(current_user)
+                    =link_to User.human_attribute_name(:messages), user_messages_path(:inbox)
             -else
                 -if @friendship
                     %div
                         =link_to t("friendship.remove"), friendship_path(@friendship), :method => :delete
                 -else
-                    %div
-                        =link_to t("friendship.request"), new_friendship_path
+                    %div    
+                        =link_to t("friendship.request"), user_friendship_path(@user.id), :method => :post
             %div
                 =link_to t("message.new.link"), new_user_message_path(@user)
         .sidebar_block.friends
