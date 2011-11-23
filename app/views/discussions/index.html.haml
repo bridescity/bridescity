@@ -1,0 +1,4 @@
+=link_to t("discussion.new"), new_discussion_path
+%ol
+  -@discussions.each do |discussion|
+    %li=discussion.title

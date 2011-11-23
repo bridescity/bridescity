@@ -1,5 +1,9 @@
 Bridescity::Application.routes.draw do
-  
+
+  resources :discussions do
+    resources :comments
+  end
+
   match "home/messages/:type" => "messages#index", :as => :user_messages
   match "users/:id/friendship" => "friendships#create", :as => :user_friendship, :method => :post
 

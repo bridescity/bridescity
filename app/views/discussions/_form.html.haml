@@ -1,0 +1,7 @@
+=semantic_form_for @discussion do |form|
+  =form.input :title
+  =form.input :content
+  =form.input :draft
+
+  =form.buttons do
+    =form.submit t("discussions.new.submit")
