@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     @user = current_user
 
     if(params[:type] === "sent")
-      @unread_messages = @user.received_messages
+      @unread_messages = @user.sent_messages
     elsif(params[:type] === "inbox")
       @unread_messages = @user.unread_messages
       @read_messages = @user.read_messages

@@ -1,4 +1,5 @@
 ru:
   friendship:
     request: "Добавить в друзья"
+    request_sended: "(Предложена дружба)"
     remove: "Удалить из друзей"

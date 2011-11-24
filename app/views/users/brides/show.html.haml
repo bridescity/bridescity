@@ -39,10 +39,14 @@
                     %div
                         =link_to t("friendship.remove"), friendship_path(@friendship), :method => :delete
                 -else
-                    %div    
-                        =link_to t("friendship.request"), user_friendship_path(@user.id), :method => :post
-            %div
-                =link_to t("message.new.link"), new_user_message_path(@user)
+                    %div
+                        -if !@user.followed_by? current_user
+                            =friendship_form(@user) do
+                                =js_link t("friendship.request"), :class => "friendship_request"
+                        -else
+                            =t("friendship.request_sended")
+                %div
+                    =link_to t("message.new.link"), new_user_message_path(@user)
         .sidebar_block.friends
             %h2=t("user.friends.title")
             -@user.friends.each do |friend|

@@ -1,2 +1,8 @@
-=curly_header t("message.new.title")
-=render "form"
+-content_for :styles do
+  =stylesheet_link_tag "pages/messages" 
+#messages
+  .messages_content_wrapper
+    .messages_content
+      =curly_header t("message.new.title")
+      =render "form"
+  =render "panel"

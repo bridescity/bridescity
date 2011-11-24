@@ -16,3 +16,6 @@
 
 #profile_edit .profile_image {
   margin-left: 135px; }
+
+.comment_reply {
+  display: none; }

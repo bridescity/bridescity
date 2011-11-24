@@ -3,17 +3,17 @@ class FriendshipsController < ApplicationController
     @user = current_user
     @friend = User.find(params[:id])
 
-    if(@user && @friend)
-      Friendship.make_friends(@user, @friendship)
-    end
+    Friendship.make_friends(@user, @friend)
+    render :json => {:success => true}
   end
 
   def destroy
     @f = Friendship.find(params[:id])
 
     Friendship.stop_being_friends @f.inviter, @f.invited
+
     respond_to do |format|
-    format.html redirect_to current_user
+      format.html redirect_to current_user
     end
   end
 end

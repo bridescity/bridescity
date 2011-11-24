@@ -68,4 +68,12 @@ module ApplicationHelper
       content_tag :div, link, options
     end
 
+    def friendship_form(user, options = {}, &block)
+      options[:class] ||= ""
+      options[:class] << " friendship_form"
+      options[:remote] = true
+
+      form_tag user_friendship_path(user.id), options, &block
+    end
+
 end

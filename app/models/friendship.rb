@@ -27,8 +27,8 @@ class Friendship < ActiveRecord::Base
     def stop_being_friends(user, target)
       transaction do
         begin
-          Friendship.first(:conditions => {:inviter_id => target.id, :invited_id => user.id, :status => ACCEPTED}).update_attribute(:status, PENDING)
-            f = Friendship.first(:conditions => {:inviter_id => user.id, :invited_id => target.id, :status => ACCEPTED}).destroy
+          Friendship.first(:conditions => {:inviter_id => user.id, :invited_id => target.id, :status => ACCEPTED}).destroy
+          Friendship.first(:conditions => {:inviter_id => target.id, :invited_id => user.id, :status => ACCEPTED}).destroy
         rescue Exception
             return false
          end

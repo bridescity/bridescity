@@ -11,3 +11,13 @@
     #messages .messages_content_wrapper .messages_content {
       margin: 0 0 0 170px;
       padding: 0 10px; }
+      #messages .messages_content_wrapper .messages_content textarea {
+        width: 330px; }
+  #messages .target {
+    overflow: hidden; }
+    #messages .target .user_preview img {
+      float: left; }
+    #messages .target .user_preview .name {
+      display: inline-block;
+      font: italic 18px/20px "Geoargia";
+      margin-left: 20px; }
